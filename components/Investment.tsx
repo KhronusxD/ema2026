@@ -85,10 +85,13 @@ export const Investment: React.FC = () => {
                             </div>
 
                             <div className="mt-8">
-                                <Button variant="primary" className="w-full justify-center py-4 text-lg shadow-lg hover:shadow-ministry-accent/20" aria-label="Garantir vaga com desconto">
-                                    GARANTIR MINHA VAGA AGORA
+                                <Button variant="primary" className="w-full justify-center py-4 text-lg shadow-lg hover:shadow-ministry-accent/20" aria-label="Fazer Pré-inscrição">
+                                    FAZER PRÉ-INSCRIÇÃO
                                 </Button>
                                 <p className="text-center text-xs text-gray-500 mt-3 font-serif">
+                                    *Você será redirecionado para o nosso grupo de WhatsApp para garantir sua vaga.
+                                </p>
+                                <p className="text-center text-xs text-gray-500 mt-1 font-serif">
                                     Garantia de 7 dias incondicional.
                                 </p>
                             </div>

@@ -39,11 +39,14 @@ export const Hero: React.FC = () => {
         </div>
 
         {/* CTA Button with z-index to stay above elements but not fixed nav */}
-        <div className="mt-12 relative z-30">
-          <Button variant="pill" className="group" aria-label="Quero garantir minha vaga no Grupo VIP">
-            <span className="mr-2">Quero garantir minha vaga no Grupo VIP</span>
+        <div className="mt-12 relative z-30 flex flex-col items-center">
+          <Button variant="pill" className="group" aria-label="Fazer Pré-inscrição">
+            <span className="mr-2">Fazer Pré-inscrição</span>
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </Button>
+          <p className="mt-4 text-xs md:text-sm text-gray-400 max-w-md text-center font-serif leading-relaxed">
+            *Você será redirecionado para o nosso grupo de WhatsApp para garantir sua vaga.
+          </p>
         </div>
       </div>
 

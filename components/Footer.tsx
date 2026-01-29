@@ -9,9 +9,14 @@ export const Footer: React.FC = () => {
           <h2 className="font-sans font-black text-3xl md:text-5xl mb-6 leading-tight">
             FAÇA EMA. NÃO É APENAS UMA FORMAÇÃO, É UM CHAMADO.
           </h2>
-          <Button variant="primary" className="text-xl px-4 md:px-12 py-5 shadow-2xl animate-pulse" aria-label="Quero garantir minha vaga no Grupo VIP">
-            Quero garantir minha vaga no Grupo VIP
-          </Button>
+          <div className="flex flex-col items-center">
+            <Button variant="primary" className="text-xl px-4 md:px-12 py-5 shadow-2xl animate-pulse" aria-label="Fazer Pré-inscrição Agora">
+              FAZER PRÉ-INSCRIÇÃO AGORA
+            </Button>
+            <p className="mt-4 text-xs md:text-sm text-gray-400 max-w-md mx-auto font-serif leading-relaxed">
+              *Você será redirecionado para o nosso grupo de WhatsApp para garantir sua vaga.
+            </p>
+          </div>
         </div>
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-sm font-serif text-gray-400">
