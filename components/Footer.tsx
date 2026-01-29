@@ -9,17 +9,17 @@ export const Footer: React.FC = () => {
           <h2 className="font-sans font-black text-3xl md:text-5xl mb-6 leading-tight">
             FAÇA EMA. NÃO É APENAS UMA FORMAÇÃO, É UM CHAMADO.
           </h2>
-          <Button variant="primary" className="text-xl px-12 py-5 shadow-2xl animate-pulse">
-            INSCREVA-SE AGORA PELA PLATAFORMA
+          <Button variant="primary" className="text-xl px-4 md:px-12 py-5 shadow-2xl animate-pulse" aria-label="Quero garantir minha vaga no Grupo VIP">
+            Quero garantir minha vaga no Grupo VIP
           </Button>
         </div>
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-sm font-serif text-gray-400">
           <p>© 2026 Escola de Missões e Avivamento.</p>
           <div className="flex gap-6 mt-4 md:mt-0">
-             <a href="#" className="hover:text-ministry-accent transition-colors">Instagram</a>
-             <a href="#" className="hover:text-ministry-accent transition-colors">YouTube</a>
-             <a href="#" className="hover:text-ministry-accent transition-colors">Contato</a>
+            <a href="#" className="hover:text-ministry-accent transition-colors">Instagram</a>
+            <a href="#" className="hover:text-ministry-accent transition-colors">YouTube</a>
+            <a href="#" className="hover:text-ministry-accent transition-colors">Contato</a>
           </div>
         </div>
       </div>

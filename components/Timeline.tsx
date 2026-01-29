@@ -3,7 +3,7 @@ import { TimelineEvent } from '../types';
 
 const events: TimelineEvent[] = [
   {
-    date: "01 de Fevereiro",
+    date: "08 de Fevereiro",
     title: "Início das Inscrições",
     description: "Abertura oficial para garantia de vagas."
   },
@@ -37,7 +37,7 @@ const events: TimelineEvent[] = [
 export const Timeline: React.FC = () => {
   return (
     <section id="timeline" className="py-24 bg-ministry-base relative">
-       {/* Background Texture - Contours */}
+      {/* Background Texture - Contours */}
       <div className="absolute inset-0 z-0 bg-contours opacity-10"></div>
 
       <div className="container mx-auto px-6 relative z-10">
@@ -46,7 +46,7 @@ export const Timeline: React.FC = () => {
             Cronograma Turma 2026
           </h2>
           <h3 className="font-sans font-bold text-3xl md:text-4xl text-white">
-            Planeje seu ano para o Avivamento.
+            Jornada Acadêmica 2026
           </h3>
         </div>
 
@@ -57,13 +57,13 @@ export const Timeline: React.FC = () => {
           <div className="space-y-12">
             {events.map((event, index) => (
               <div key={index} className={`relative flex items-center ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
-                
+
                 {/* Space for the other side on desktop */}
                 <div className="hidden md:block w-1/2"></div>
-                
+
                 {/* Dot */}
                 <div className="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-ministry-accent rounded-full border-4 border-ministry-dark shadow-sm z-10"></div>
-                
+
                 {/* Content */}
                 <div className="ml-12 md:ml-0 md:w-1/2 md:px-12">
                   <div className={`bg-ministry-dark p-6 rounded-lg shadow-lg border border-ministry-accent/20 ${index % 2 === 0 ? 'md:text-left border-l-4 border-l-ministry-accent' : 'md:text-right md:border-r-4 md:border-r-ministry-accent border-l-4 border-l-ministry-accent md:border-l-ministry-accent/20'}`}>

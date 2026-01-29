@@ -8,6 +8,9 @@ import { Timeline } from './components/Timeline';
 import { Values } from './components/Values';
 import { FAQ } from './components/FAQ';
 import { Footer } from './components/Footer';
+import { Trips } from './components/Trips';
+import { Methodology } from './components/Methodology';
+import { Investment } from './components/Investment';
 
 function App() {
   return (
@@ -16,9 +19,12 @@ function App() {
       <main className="flex-grow">
         <Hero />
         <Manifesto />
+        <Methodology />
         <Features />
+        <Trips />
         <Teachers />
         <Timeline />
+        <Investment />
         <Values />
         <FAQ />
       </main>
