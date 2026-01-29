@@ -15,6 +15,7 @@ export const Navbar: React.FC = () => {
         <div className="hidden md:flex items-center space-x-8">
           <a href="#manifesto" className="text-sm font-bold text-white hover:text-ministry-accent transition-colors uppercase tracking-wide">Sobre</a>
           <a href="#features" className="text-sm font-bold text-white hover:text-ministry-accent transition-colors uppercase tracking-wide">Diferenciais</a>
+          <a href="#teachers" className="text-sm font-bold text-white hover:text-ministry-accent transition-colors uppercase tracking-wide">Professores</a>
           <a href="#timeline" className="text-sm font-bold text-white hover:text-ministry-accent transition-colors uppercase tracking-wide">Cronograma</a>
           <a href="#faq" className="text-sm font-bold text-white hover:text-ministry-accent transition-colors uppercase tracking-wide">Dúvidas</a>
         </div>

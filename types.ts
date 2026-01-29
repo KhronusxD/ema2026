@@ -4,6 +4,13 @@ export interface TimelineEvent {
   description?: string;
 }
 
+export interface Teacher {
+  id: number;
+  name: string;
+  subject: string;
+  image?: string;
+}
+
 export interface ValueItem {
   id: number;
   title: string;
