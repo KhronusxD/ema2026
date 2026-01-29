@@ -11,9 +11,13 @@ export const Hero: React.FC = () => {
       {/* Main Content */}
       <div className="flex-grow flex flex-col items-center justify-center relative z-10 w-full max-w-7xl mx-auto px-4 pb-32">
 
-        {/* Asterisk Icon */}
-        <div className="relative mb-8 transform hover:rotate-180 transition-transform duration-1000 cursor-pointer">
-          <Asterisk className="w-24 h-24 text-yellow-400 fill-yellow-400 drop-shadow-[0_10px_10px_rgba(0,0,0,0.5)]" />
+        {/* Logo Icon */}
+        <div className="relative mb-8 transform hover:scale-105 transition-transform duration-500 cursor-pointer">
+          <img
+            src="/logo-white.png"
+            alt="EMA Logo"
+            className="h-32 w-auto drop-shadow-[0_10px_10px_rgba(0,0,0,0.5)] object-contain"
+          />
         </div>
 
         {/* Headline - Print Style */}
