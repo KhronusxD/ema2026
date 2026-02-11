@@ -1,13 +1,56 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Button } from './ui/Button';
 
 export const Navbar: React.FC = () => {
+  const [isVisible, setIsVisible] = useState(true);
+  const lastScrollY = useRef(0);
+  const scrollTimeout = useRef<NodeJS.Timeout | null>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      // Determine scroll direction
+      if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
+        // Scrolling down and not at the very top
+        setIsVisible(false);
+      } else if (currentScrollY < lastScrollY.current) {
+        // Scrolling up
+        setIsVisible(true);
+      }
+
+      lastScrollY.current = currentScrollY;
+
+      // "Show on stop" logic
+      if (scrollTimeout.current) {
+        clearTimeout(scrollTimeout.current);
+      }
+
+      // If stopped for 500ms, show navbar (unless at top, where it's always shown by logic above)
+      scrollTimeout.current = setTimeout(() => {
+        setIsVisible(true);
+      }, 500);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (scrollTimeout.current) {
+        clearTimeout(scrollTimeout.current);
+      }
+    };
+  }, []);
+
   return (
-    <nav className="fixed top-0 w-full z-50 bg-ministry-base/90 backdrop-blur-md border-b border-ministry-accent/20">
-      <div className="container mx-auto px-6 py-4 flex justify-between items-center">
+    <nav
+      className={`fixed top-0 w-full z-50 bg-ministry-base/90 backdrop-blur-md border-b border-ministry-accent/20 transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'
+        }`}
+    >
+      <div className="container mx-auto px-6 py-3 flex justify-between items-center">
         {/* Logo Area */}
         <div className="flex flex-col leading-none">
-          <img src="/logo-white.png" alt="EMA Logo" className="h-16 w-auto object-contain" />
+          <img src="/logo-white.png" alt="EMA Logo" className="h-14 w-auto object-contain" />
         </div>
 
         {/* Desktop Links */}
