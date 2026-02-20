@@ -2,13 +2,13 @@ import React from 'react';
 import { Teacher } from '../types';
 
 const teachers: Teacher[] = [
-    { id: 1, name: "Hillary Queiroz", subject: "Missionalidade da Igreja", image: "/teachers/teacher-1.png" }, // Aguardando verificação
-    { id: 2, name: "Aldair Queiroz", subject: "Conhecimento de Deus & Missio Dei", image: "/teachers/teacher-2.png" }, // Aguardando verificação
-    { id: 3, name: "Débora Maradei", subject: "Introdução à Cosmovisão Cristã", image: "/teachers/teacher-3.png" }, // Aguardando verificação
-    { id: 4, name: "Felipe Cunha", subject: "Espiritualidade Cristã e a Missão", image: "/teachers/teacher-4.png" }, // Aguardando verificação
-    { id: 5, name: "Raquel Siqueira", subject: "Deleitando-se na Oração", image: "/teachers/teacher-5.png" }, // Aguardando verificação
-    { id: 6, name: "Gustavo Maradei", subject: "Avivamento e a História", image: "https://picsum.photos/seed/marcondes/400/500" }, // Foto pendente ou reusar uma?
-    { id: 7, name: "Luiz", subject: "Avivamento Sustentável - Vida no Espírito", image: "https://picsum.photos/seed/caio/400/500" }, // Foto pendente ou reusar uma?
+    { id: 1, name: "Hillary Queiroz", subject: "Missionalidade da Igreja", image: "/teachers/hillary.png" },
+    { id: 2, name: "Aldair Queiroz", subject: "Conhecimento de Deus & Missio Dei", image: "/teachers/aldair.png" },
+    { id: 3, name: "Débora Maradei", subject: "Introdução à Cosmovisão Cristã", image: "/teachers/debora.png" },
+    { id: 4, name: "Wallerya", subject: "Espiritualidade Cristã e a Missão", image: "/teachers/wallerya.png" },
+    { id: 5, name: "Raquel Siqueira", subject: "Deleitando-se na Oração", image: "/teachers/raquel.png" },
+    { id: 6, name: "Gustavo Maradei", subject: "Avivamento e a História", image: "/teachers/gustavo.png" },
+    { id: 7, name: "Luiz", subject: "Avivamento Sustentável - Vida no Espírito", image: "/teachers/luiz.png" },
 ];
 
 export const Teachers: React.FC = () => {
