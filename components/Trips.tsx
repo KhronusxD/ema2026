@@ -24,7 +24,7 @@ export const Trips: React.FC = () => {
                     {/* Card 1 - Uruguai */}
                     <div className="relative group overflow-hidden rounded-lg h-96">
                         <img
-                            src="https://picsum.photos/seed/uruguai/600/800"
+                            src="/trips/uruguai.png"
                             alt="Uruguai"
                             className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
                             loading="lazy"
