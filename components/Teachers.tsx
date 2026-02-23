@@ -2,13 +2,13 @@ import React from 'react';
 import { Teacher } from '../types';
 
 const teachers: Teacher[] = [
-    { id: 1, name: "Hillary Queiroz", subject: "Missionalidade da Igreja", image: "/teachers/hillary.png" },
+    { id: 1, name: "Hillary Queiroz", subject: "Missionalidade da Igreja & Liderança", image: "/teachers/hillary.png" },
     { id: 2, name: "Aldair Queiroz", subject: "Conhecimento de Deus & Missio Dei", image: "/teachers/aldair.png" },
-    { id: 3, name: "Débora Maradei", subject: "Introdução à Cosmovisão Cristã", image: "/teachers/debora.png" },
-    { id: 4, name: "Wallerya", subject: "Espiritualidade Cristã e a Missão", image: "/teachers/wallerya.png" },
-    { id: 5, name: "Raquel Siqueira", subject: "Deleitando-se na Oração", image: "/teachers/raquel.png" },
-    { id: 6, name: "Gustavo Maradei", subject: "Avivamento e a História", image: "/teachers/gustavo.png" },
-    { id: 7, name: "Luiz", subject: "Avivamento Sustentável - Vida no Espírito", image: "/teachers/luiz.png" },
+    { id: 3, name: "Débora Maradei", subject: "Cosmovisão Cristã & Missiologia", image: "/teachers/debora.png" },
+    { id: 4, name: "Kristyan Walleria", subject: "Administração Financeira & Negócios", image: "/teachers/wallerya.png" },
+    { id: 5, name: "Raquel Siqueira", subject: "Oração & Intercessão", image: "/teachers/raquel.png" },
+    { id: 6, name: "Gustavo Maradei", subject: "Atos dos Apóstolos & Missão", image: "/teachers/gustavo.png" },
+    { id: 7, name: "Luiz Oliveira", subject: "Antropologia Missionária", image: "/teachers/luiz.png" },
 ];
 
 export const Teachers: React.FC = () => {

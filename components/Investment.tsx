@@ -46,7 +46,7 @@ export const Investment: React.FC = () => {
                             <div className="mb-6 flex-grow">
                                 <p className="text-gray-400 text-xs font-bold uppercase mb-1">Valor da Formação</p>
                                 <div className="flex items-baseline">
-                                    <span className="text-xl text-gray-500 mr-2 line-through">R$ 2.497</span>
+                                    <span className="text-xl text-gray-500 mr-2 line-through">R$ 2.297,00</span>
                                     <span className="text-3xl font-black text-white">R$ 1.697,00</span>
                                 </div>
                             </div>
@@ -63,18 +63,15 @@ export const Investment: React.FC = () => {
 
                     {/* Right Side: Combo Card */}
                     <div className="bg-ministry-base rounded-2xl border-2 border-ministry-accent overflow-hidden shadow-2xl shadow-ministry-accent/10 flex flex-col h-full relative transform md:-translate-y-4">
-                        <div className="absolute top-0 right-0 bg-ministry-accent text-ministry-dark font-bold text-[10px] sm:text-xs px-8 py-1.5 transform translate-x-8 sm:translate-x-10 translate-y-5 rotate-45 shadow-md z-20 w-48 text-center tracking-widest uppercase">
-                            MAIS RECOMENDADO
-                        </div>
                         <div className="p-8 pb-6 flex-grow relative">
                             <div className="absolute inset-0 bg-ministry-accent/5 opacity-50"></div>
                             <div className="relative z-10">
                                 <h4 className="font-sans font-bold text-2xl text-ministry-accent mb-2">Programa Presencial Manaus</h4>
-                                <p className="font-serif text-gray-300 text-sm mb-6">Incluso práticos extras como:</p>
+                                <p className="font-serif text-gray-300 text-sm mb-6">Apenas para alunos residentes em Manaus</p>
                                 <ul className="space-y-4">
                                     {[
                                         "Tudo da Formação Missional EMA",
-                                        "Semiraitá (seminário indígena)",
+                                        "Semiraita (seminário indígena)",
                                         "Projeto Madalena (missões urbanas)",
                                         "Casa dos Filhos (projeto social)",
                                         "+ 04 aulas extras",
@@ -93,7 +90,7 @@ export const Investment: React.FC = () => {
                             <div className="mb-6 flex-grow">
                                 <p className="text-gray-400 text-xs font-bold uppercase mb-1">Valor do Programa</p>
                                 <div className="flex items-baseline">
-                                    <span className="text-xl text-gray-500 mr-2 line-through">R$ 2.997</span>
+                                    <span className="text-xl text-gray-500 mr-2 line-through">R$ 2.597,00</span>
                                     <span className="text-4xl font-black text-white">R$ 1.897,00</span>
                                 </div>
                             </div>
@@ -141,7 +138,7 @@ export const Investment: React.FC = () => {
                                     <CreditCard className="w-6 h-6 text-ministry-accent mr-4" />
                                     <div>
                                         <div className="text-white font-bold">Pagamento em Cartão</div>
-                                        <div className="text-sm text-gray-400">Pague com cartão de crédito</div>
+                                        <div className="text-sm text-gray-400">Parcele em até 12x</div>
                                     </div>
                                 </a>
                                 <a
@@ -153,7 +150,7 @@ export const Investment: React.FC = () => {
                                     <FileText className="w-6 h-6 text-ministry-accent mr-4" />
                                     <div>
                                         <div className="text-white font-bold">Pagamento em Boleto</div>
-                                        <div className="text-sm text-gray-400">Pague no boleto</div>
+                                        <div className="text-sm text-gray-400">Pagamento à vista</div>
                                     </div>
                                 </a>
                             </div>

@@ -6,9 +6,12 @@ export const Footer: React.FC = () => {
     <footer className="bg-ministry-dark text-white pt-20 pb-10 border-t-4 border-ministry-accent">
       <div className="container mx-auto px-6 text-center">
         <div className="max-w-4xl mx-auto mb-16">
-          <h2 className="font-sans font-black text-3xl md:text-5xl mb-6 leading-tight">
-            FAÇA EMA. NÃO É APENAS UMA FORMAÇÃO, É UM CHAMADO.
+          <h2 className="font-sans font-black text-5xl md:text-7xl mb-4 leading-tight text-white mb-2">
+            FAÇA EMA!
           </h2>
+          <h3 className="font-sans font-bold text-xl md:text-2xl mb-8 leading-tight text-ministry-accent uppercase tracking-widest text-[#f5f5f5] mb-6">
+            Não é apenas uma formação, é um chamado.
+          </h3>
           <div className="flex flex-col items-center">
             <a href="#investment" className="inline-block">
               <Button variant="primary" className="text-xl px-4 md:px-12 py-5 shadow-2xl animate-pulse" aria-label="Ingressar na Turma">
