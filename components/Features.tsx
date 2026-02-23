@@ -11,8 +11,8 @@ export const Features: React.FC = () => {
           <h2 className="font-sans font-bold text-sm text-ministry-accent uppercase tracking-widest mb-4">
             Diferenciais
           </h2>
-          <h3 className="font-sans font-bold text-4xl md:text-5xl mb-6 text-white">
-            Teoria, Espiritualidade e Ação Inseparáveis.
+          <h3 className="font-sans font-bold text-4xl md:text-5xl mb-6 text-white leading-tight">
+            Fundamento bíblico, formação espiritual e prática missionária real.
           </h3>
         </div>
 
@@ -24,7 +24,7 @@ export const Features: React.FC = () => {
             </div>
             <h4 className="font-sans font-bold text-xl mb-3 border-l-4 border-ministry-accent pl-4 text-white">Professores em Campo</h4>
             <p className="font-serif text-gray-400 leading-relaxed text-sm">
-              Nossa equipe é formada por quem vive a missão na prática, atuando em diferentes contextos e regiões do mundo.
+              Nossa equipe é formada por professores que vivem a missão na prática, atuando em diferentes contextos e regiões do mundo.
             </p>
           </div>
 
@@ -33,9 +33,9 @@ export const Features: React.FC = () => {
             <div className="aspect-[4/5] overflow-hidden rounded-lg mb-6 grayscale group-hover:grayscale-0 transition-all duration-700 border border-ministry-accent/20">
               <img src="/features/pratica.png" alt="Prática Missionária" className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" />
             </div>
-            <h4 className="font-sans font-bold text-xl mb-3 border-l-4 border-ministry-accent pl-4 text-white">Prático Missionário na Amazônia</h4>
+            <h4 className="font-sans font-bold text-xl mb-3 border-l-4 border-ministry-accent pl-4 text-white">Compromisso com Justiça Social</h4>
             <p className="font-serif text-gray-400 leading-relaxed text-sm">
-              O ensino encontra seu desdobramento no campo, conectando a teoria à vivência real.
+              O ensino encontra seu desdobramento na prática, conectando a teoria à vivência real.
             </p>
           </div>
 
@@ -46,7 +46,7 @@ export const Features: React.FC = () => {
             </div>
             <h4 className="font-sans font-bold text-xl mb-3 border-l-4 border-ministry-accent pl-4 text-white">Formação Integral</h4>
             <p className="font-serif text-gray-400 leading-relaxed text-sm">
-              Cuidamos do ser humano como um todo — a missão sustentável nasce de pessoas curadas e maduras.
+              Cuidamos com o entendimento do ser humano como um todo — a missão sustentável nasce de pessoas curadas e maduras.
             </p>
           </div>
         </div>

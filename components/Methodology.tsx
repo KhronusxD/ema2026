@@ -44,7 +44,7 @@ export const Methodology: React.FC = () => {
                         </div>
                         <h4 className="font-sans font-bold text-xl mb-4 text-white">Avaliações de Rendimento</h4>
                         <p className="font-serif text-gray-400 text-sm leading-relaxed">
-                            Acompanhamento contínuo do seu desenvolvimento através de atividades e feedbacks dos mentores.
+                            Acompanhamento contínuo do seu desenvolvimento através de atividades e feedbacks dos tutores.
                         </p>
                     </div>
                 </div>
