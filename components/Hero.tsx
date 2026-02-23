@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from './ui/Button';
-import { ArrowRight, Asterisk, Globe, Cross, Star, MoveUp } from 'lucide-react';
+import { ArrowRight, Asterisk, Globe, Cross, BookOpen, Flag } from 'lucide-react';
 
 export const Hero: React.FC = () => {
   return (
@@ -15,23 +15,9 @@ export const Hero: React.FC = () => {
 
         {/* Headline - Print Style */}
         <div className="flex flex-col items-center text-center space-y-1">
-          <h1 className="font-condensed text-6xl md:text-8xl lg:text-9xl leading-[0.85] text-white tracking-tighter flex flex-col items-center">
-
-            <div className="flex flex-wrap justify-center gap-x-3 md:gap-x-6">
-              <span>PREPARANDO</span>
-              <span>A</span>
-            </div>
-
-            <div className="transform -skew-x-6 bg-ministry-accent px-4 md:px-6 my-1">
-              <span className="block text-ministry-base transform skew-x-6 italic pr-2 font-black">IGREJA,</span>
-            </div>
-
-            <span className="text-outline">EXPANDINDO</span>
-
-            <div className="flex flex-wrap justify-center gap-x-3 text-ministry-highlight">
-              <span>O</span>
-              <span>REINO.</span>
-            </div>
+          <h1 className="font-condensed text-5xl md:text-7xl lg:text-8xl leading-tight text-white tracking-normal flex flex-col items-center my-4 font-bold">
+            <span>Preparando a Igreja,</span>
+            <span>Expandindo o Reino.</span>
           </h1>
         </div>
 
@@ -52,29 +38,31 @@ export const Hero: React.FC = () => {
         <div className="flex items-center space-x-12 animate-scroll w-[200%]">
           {/* Repeating pattern block 1 */}
           <div className="flex items-center space-x-12 opacity-80">
-            <Globe className="w-10 h-10 text-ministry-accent" strokeWidth={1.5} />
+            <Asterisk className="w-10 h-10 text-ministry-accent" strokeWidth={1.5} />
+            <Globe className="w-10 h-10 text-white" strokeWidth={1.5} />
+            <BookOpen className="w-10 h-10 text-ministry-accent" strokeWidth={1.5} />
             <Cross className="w-10 h-10 text-white" strokeWidth={1.5} />
-            <Star className="w-10 h-10 text-ministry-accent" strokeWidth={1.5} />
-            <MoveUp className="w-10 h-10 text-white" strokeWidth={1.5} />
+            <Flag className="w-10 h-10 text-ministry-accent" strokeWidth={1.5} />
+
+            <Asterisk className="w-10 h-10 text-white" strokeWidth={1.5} />
             <Globe className="w-10 h-10 text-ministry-accent" strokeWidth={1.5} />
-            <Cross className="w-10 h-10 text-white" strokeWidth={1.5} />
-            <Star className="w-10 h-10 text-ministry-accent" strokeWidth={1.5} />
-            <MoveUp className="w-10 h-10 text-white" strokeWidth={1.5} />
-            <Globe className="w-10 h-10 text-ministry-accent" strokeWidth={1.5} />
-            <Cross className="w-10 h-10 text-white" strokeWidth={1.5} />
+            <BookOpen className="w-10 h-10 text-white" strokeWidth={1.5} />
+            <Cross className="w-10 h-10 text-ministry-accent" strokeWidth={1.5} />
+            <Flag className="w-10 h-10 text-white" strokeWidth={1.5} />
           </div>
           {/* Repeating pattern block 2 for smoothness */}
           <div className="flex items-center space-x-12 opacity-80">
-            <Globe className="w-10 h-10 text-ministry-accent" strokeWidth={1.5} />
+            <Asterisk className="w-10 h-10 text-ministry-accent" strokeWidth={1.5} />
+            <Globe className="w-10 h-10 text-white" strokeWidth={1.5} />
+            <BookOpen className="w-10 h-10 text-ministry-accent" strokeWidth={1.5} />
             <Cross className="w-10 h-10 text-white" strokeWidth={1.5} />
-            <Star className="w-10 h-10 text-ministry-accent" strokeWidth={1.5} />
-            <MoveUp className="w-10 h-10 text-white" strokeWidth={1.5} />
+            <Flag className="w-10 h-10 text-ministry-accent" strokeWidth={1.5} />
+
+            <Asterisk className="w-10 h-10 text-white" strokeWidth={1.5} />
             <Globe className="w-10 h-10 text-ministry-accent" strokeWidth={1.5} />
-            <Cross className="w-10 h-10 text-white" strokeWidth={1.5} />
-            <Star className="w-10 h-10 text-ministry-accent" strokeWidth={1.5} />
-            <MoveUp className="w-10 h-10 text-white" strokeWidth={1.5} />
-            <Globe className="w-10 h-10 text-ministry-accent" strokeWidth={1.5} />
-            <Cross className="w-10 h-10 text-white" strokeWidth={1.5} />
+            <BookOpen className="w-10 h-10 text-white" strokeWidth={1.5} />
+            <Cross className="w-10 h-10 text-ministry-accent" strokeWidth={1.5} />
+            <Flag className="w-10 h-10 text-white" strokeWidth={1.5} />
           </div>
         </div>
       </div>
