@@ -3,12 +3,12 @@ import { TimelineEvent } from '../types';
 
 const events: TimelineEvent[] = [
   {
-    date: "08 de Fevereiro",
+    date: "23 de fevereiro",
     title: "Início das Inscrições",
     description: "Abertura oficial para garantia de vagas."
   },
   {
-    date: "04 de Março",
+    date: "13 de março",
     title: "Aula 1 (Aberta)",
     description: "O início da jornada. Uma aula inaugural aberta ao público."
   },
@@ -18,12 +18,12 @@ const events: TimelineEvent[] = [
     description: "Quartas e Sextas com foco em processamento e conteúdo profundo."
   },
   {
-    date: "03 de Julho",
+    date: "17 de julho",
     title: "Formatura",
     description: "Celebração do encerramento da fase teórica."
   },
   {
-    date: "05 a 26 de Julho",
+    date: "Julho",
     title: "Viagens Missionárias (Prático)",
     description: "Imersão em campo."
   },

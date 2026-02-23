@@ -23,13 +23,12 @@ export const Investment: React.FC = () => {
                         <div className="p-8 pb-6 flex-grow relative">
                             <div className="absolute inset-0 bg-contours opacity-5"></div>
                             <div className="relative z-10">
-                                <h4 className="font-sans font-bold text-2xl mb-2 text-white">Formação EMA</h4>
+                                <h4 className="font-sans font-bold text-2xl mb-2 text-white">Formação Missional EMA</h4>
                                 <p className="font-serif text-gray-400 text-sm mb-6">A base sólida da sua vocação.</p>
                                 <ul className="space-y-4">
                                     {[
                                         "Acesso total às aulas ao vivo",
-                                        "Gravações disponíveis por 12 meses",
-                                        "Mentoria em grupo quinzenal",
+                                        "Gravações disponíveis até 31 de dezembro",
                                         "Material didático digital",
                                         "Certificado de Conclusão",
                                         "Acesso à comunidade exclusiva"
@@ -74,8 +73,10 @@ export const Investment: React.FC = () => {
                                 <p className="font-serif text-gray-300 text-sm mb-6">Incluso práticos extras como:</p>
                                 <ul className="space-y-4">
                                     {[
-                                        "Seminaritá",
+                                        "Tudo da Formação Missional EMA",
+                                        "Semiraitá (seminário indígena)",
                                         "Projeto Madalena (missões urbanas)",
+                                        "Casa dos Filhos (projeto social)",
                                         "+ 04 aulas extras",
                                         "Economia de R$ 100 ao longo do curso"
                                     ].map((item, i) => (

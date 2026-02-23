@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from './ui/Button';
-import { ArrowRight, Asterisk, Globe, Cross, BookOpen, Flag } from 'lucide-react';
+import { ArrowRight, Asterisk, Globe, Sailboat, Plane, BookOpen, Flag } from 'lucide-react';
 
 export const Hero: React.FC = () => {
   return (
@@ -15,6 +15,7 @@ export const Hero: React.FC = () => {
 
         {/* Headline - Print Style */}
         <div className="flex flex-col items-center text-center space-y-1">
+          <span className="text-ministry-accent font-sans font-bold text-sm md:text-base tracking-widest uppercase mb-2">Formação Missional EMA</span>
           <h1 className="font-condensed text-5xl md:text-7xl lg:text-8xl leading-tight text-white tracking-normal flex flex-col items-center my-4 font-bold">
             <span>Preparando a Igreja,</span>
             <span>Expandindo o Reino.</span>
@@ -23,12 +24,14 @@ export const Hero: React.FC = () => {
 
         {/* CTA Button with z-index to stay above elements but not fixed nav */}
         <div className="mt-12 relative z-30 flex flex-col items-center">
-          <Button variant="pill" className="group" aria-label="Fazer Pré-inscrição">
-            <span className="mr-2">Fazer Pré-inscrição</span>
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </Button>
+          <a href="#investment" className="inline-block relative z-30">
+            <Button variant="pill" className="group" aria-label="Ingressar na Turma">
+              <span className="mr-2">Ingressar na Turma</span>
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Button>
+          </a>
           <p className="mt-4 text-xs md:text-sm text-gray-400 max-w-md text-center font-serif leading-relaxed">
-            *Você será redirecionado para o nosso grupo de WhatsApp para garantir sua vaga.
+            Primeira turma de 2026
           </p>
         </div>
       </div>
@@ -41,13 +44,13 @@ export const Hero: React.FC = () => {
             <Asterisk className="w-10 h-10 text-ministry-accent" strokeWidth={1.5} />
             <Globe className="w-10 h-10 text-white" strokeWidth={1.5} />
             <BookOpen className="w-10 h-10 text-ministry-accent" strokeWidth={1.5} />
-            <Cross className="w-10 h-10 text-white" strokeWidth={1.5} />
+            <Sailboat className="w-10 h-10 text-white" strokeWidth={1.5} />
             <Flag className="w-10 h-10 text-ministry-accent" strokeWidth={1.5} />
 
             <Asterisk className="w-10 h-10 text-white" strokeWidth={1.5} />
             <Globe className="w-10 h-10 text-ministry-accent" strokeWidth={1.5} />
             <BookOpen className="w-10 h-10 text-white" strokeWidth={1.5} />
-            <Cross className="w-10 h-10 text-ministry-accent" strokeWidth={1.5} />
+            <Plane className="w-10 h-10 text-ministry-accent" strokeWidth={1.5} />
             <Flag className="w-10 h-10 text-white" strokeWidth={1.5} />
           </div>
           {/* Repeating pattern block 2 for smoothness */}
@@ -55,13 +58,13 @@ export const Hero: React.FC = () => {
             <Asterisk className="w-10 h-10 text-ministry-accent" strokeWidth={1.5} />
             <Globe className="w-10 h-10 text-white" strokeWidth={1.5} />
             <BookOpen className="w-10 h-10 text-ministry-accent" strokeWidth={1.5} />
-            <Cross className="w-10 h-10 text-white" strokeWidth={1.5} />
+            <Sailboat className="w-10 h-10 text-white" strokeWidth={1.5} />
             <Flag className="w-10 h-10 text-ministry-accent" strokeWidth={1.5} />
 
             <Asterisk className="w-10 h-10 text-white" strokeWidth={1.5} />
             <Globe className="w-10 h-10 text-ministry-accent" strokeWidth={1.5} />
             <BookOpen className="w-10 h-10 text-white" strokeWidth={1.5} />
-            <Cross className="w-10 h-10 text-ministry-accent" strokeWidth={1.5} />
+            <Plane className="w-10 h-10 text-ministry-accent" strokeWidth={1.5} />
             <Flag className="w-10 h-10 text-white" strokeWidth={1.5} />
           </div>
         </div>

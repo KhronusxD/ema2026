@@ -10,11 +10,13 @@ export const Footer: React.FC = () => {
             FAÇA EMA. NÃO É APENAS UMA FORMAÇÃO, É UM CHAMADO.
           </h2>
           <div className="flex flex-col items-center">
-            <Button variant="primary" className="text-xl px-4 md:px-12 py-5 shadow-2xl animate-pulse" aria-label="Fazer Pré-inscrição Agora">
-              FAZER PRÉ-INSCRIÇÃO AGORA
-            </Button>
+            <a href="#investment" className="inline-block">
+              <Button variant="primary" className="text-xl px-4 md:px-12 py-5 shadow-2xl animate-pulse" aria-label="Ingressar na Turma">
+                INGRESSAR NA TURMA
+              </Button>
+            </a>
             <p className="mt-4 text-xs md:text-sm text-gray-400 max-w-md mx-auto font-serif leading-relaxed">
-              *Você será redirecionado para o nosso grupo de WhatsApp para garantir sua vaga.
+              Primeira turma de 2026
             </p>
           </div>
         </div>

@@ -65,9 +65,11 @@ export const Navbar: React.FC = () => {
 
         {/* CTA */}
         <div>
-          <Button variant="pill" className="!text-xs !px-4 !py-2 !shadow-none hover:!shadow-none border-0" aria-label="Pré-inscrição">
-            Pré-inscrição
-          </Button>
+          <a href="#investment" className="block">
+            <Button variant="pill" className="!text-xs !px-4 !py-2 !shadow-none hover:!shadow-none border-0" aria-label="Ingressar na Turma">
+              Ingressar na Turma
+            </Button>
+          </a>
         </div>
       </div>
     </nav>
