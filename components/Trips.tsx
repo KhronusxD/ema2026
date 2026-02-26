@@ -37,7 +37,7 @@ export const Trips: React.FC = () => {
                             </div>
                             <h4 className="font-sans font-black text-3xl mb-2 text-white">Uruguai</h4>
                             <p className="font-serif text-gray-300 text-sm">
-                                Missão transcultural urbana e apoio a igrejas locais em Montevidéu.
+                                Praticando a missão transcultural urbana e apoiando igrejas e missionários locais em Montevidéu.
                             </p>
                         </div>
                     </div>
@@ -58,7 +58,7 @@ export const Trips: React.FC = () => {
                             </div>
                             <h4 className="font-sans font-black text-3xl mb-2 text-white">Sertão</h4>
                             <p className="font-serif text-gray-300 text-sm">
-                                Evangelismo e serviço social em comunidades do interior com escassez de recursos.
+                                Servindo comunidades sertanejas com o Evangelho de forma prática e contextualizada.
                             </p>
                         </div>
                     </div>
@@ -79,7 +79,7 @@ export const Trips: React.FC = () => {
                             </div>
                             <h4 className="font-sans font-black text-3xl mb-2 text-white">Amazônia</h4>
                             <p className="font-serif text-gray-300 text-sm">
-                                Imersão ribeirinha e indígena. Vivência extrema da dependência de Deus.
+                                Respeitando a cultura, promovendo cuidado integral e fortalecendo a Igreja na região.
                             </p>
                         </div>
                     </div>
