@@ -78,16 +78,16 @@ export const Investment: React.FC = () => {
                         <div className="p-8 pb-6 flex-grow relative">
                             <div className="absolute inset-0 bg-ministry-accent/5 opacity-50"></div>
                             <div className="relative z-10">
-                                <h4 className="font-sans font-bold text-2xl text-ministry-accent mb-2">Programa Presencial Manaus</h4>
-                                <p className="font-serif text-gray-300 text-sm mb-6">Apenas para alunos residentes em Manaus</p>
+                                <h4 className="font-sans font-bold text-2xl text-ministry-accent mb-2">Programa Exclusivo Manaus</h4>
+                                <p className="font-serif text-gray-300 text-sm mb-6">Apenas para alunos residentes na cidade de Manaus</p>
                                 <ul className="space-y-4">
                                     {[
-                                        "Tudo da Formação Missional EMA",
-                                        "Semiraita (seminário indígena)",
-                                        "Projeto Madalena (missões urbanas)",
-                                        "Casa dos Filhos (projeto social)",
-                                        "+ 04 aulas extras",
-                                        "Economia de R$ 100 ao longo do curso"
+                                        "Tudo da Formação Missional EMA + aulas práticas",
+                                        "Semiraita (Seminário Indígena)",
+                                        "Projeto Madalena (Evangelismo infantil)",
+                                        "Casa dos Filhos (Apoio Social para famílias)",
+                                        "4 encontros extras",
+                                        "Economia de R$100,00 ao longo do curso"
                                     ].map((item, i) => (
                                         <li key={i} className="flex items-start text-white">
                                             <Check className="w-5 h-5 text-ministry-accent mr-3 flex-shrink-0 mt-0.5" />
