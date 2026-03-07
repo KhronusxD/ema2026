@@ -35,12 +35,12 @@ export default function ThankYouPage() {
         </div>
 
         <a
-          href="https://chat.whatsapp.com/"
+          href="https://chat.whatsapp.com/DmUow86ywQB26tLH70UYIR?mode=gi_t"
           target="_blank"
           rel="noopener noreferrer"
-          className="group relative inline-flex items-center justify-center gap-4 bg-[#25D366] text-white font-black text-xl md:text-2xl py-6 px-8 rounded-2xl hover:bg-[#20bd5a] hover:scale-105 transition-all duration-300 animate-pulse-accent shadow-[0_0_40px_rgba(37,211,102,0.5)] w-full uppercase tracking-wide"
+          className="group relative inline-flex items-center justify-center gap-3 bg-[#25D366] text-white font-black text-lg md:text-xl py-4 px-6 rounded-2xl hover:bg-[#20bd5a] hover:scale-105 transition-all duration-300 animate-pulse-accent shadow-[0_0_20px_rgba(37,211,102,0.4)] w-full uppercase tracking-wide"
         >
-          <MessageCircle size={32} />
+          <MessageCircle size={24} />
           ENTRAR NO GRUPO VIP AGORA
         </a>
       </div>

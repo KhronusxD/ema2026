@@ -11,12 +11,12 @@ export default function LandingPage() {
       {/* Background Glows */}
       <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-brand-accent/20 blur-[120px] rounded-full pointer-events-none"></div>
       <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-brand-accent/10 blur-[120px] rounded-full pointer-events-none"></div>
-      
+
       <FloatingElements />
 
       {/* Dobra 1: The Hook */}
       <section className="relative z-10 min-h-screen flex flex-col items-center justify-center px-4 pt-12 pb-20 text-center max-w-6xl mx-auto">
-        
+
         <div className="inline-flex items-center gap-2 mb-8 px-5 py-2 rounded-full bg-white/5 border border-white/10 text-brand-accent font-semibold text-sm md:text-base tracking-wide uppercase shadow-lg backdrop-blur-sm">
           <span className="relative flex h-3 w-3">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-accent opacity-75"></span>
@@ -38,16 +38,16 @@ export default function LandingPage() {
 
         {/* Video Player Placeholder */}
         <div className="w-full max-w-4xl mx-auto aspect-video bg-brand-dark rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.5)] border border-white/10 relative group mb-12 cursor-pointer" onClick={() => setIsPopupOpen(true)}>
-          <img 
-            src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?q=80&w=2070&auto=format&fit=crop" 
-            alt="Video Thumbnail" 
+          <img
+            src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?q=80&w=2070&auto=format&fit=crop"
+            alt="Video Thumbnail"
             className="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-40 transition-opacity duration-500"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-brand-bg/80 via-transparent to-transparent"></div>
           <div className="absolute inset-0 flex items-center justify-center">
-             <div className="w-24 h-24 bg-brand-accent rounded-full flex items-center justify-center pl-2 shadow-[0_0_40px_rgba(0,255,102,0.6)] group-hover:scale-110 transition-transform duration-300">
-                <Play className="text-brand-dark" size={48} fill="currentColor" />
-             </div>
+            <div className="w-24 h-24 bg-brand-accent rounded-full flex items-center justify-center pl-2 shadow-[0_0_40px_rgba(0,255,102,0.6)] group-hover:scale-110 transition-transform duration-300">
+              <Play className="text-brand-dark" size={48} fill="currentColor" />
+            </div>
           </div>
         </div>
 
@@ -65,7 +65,7 @@ export default function LandingPage() {
 
         <button
           onClick={() => setIsPopupOpen(true)}
-          className="group relative inline-flex items-center justify-center gap-3 bg-brand-accent text-brand-dark font-black text-xl md:text-2xl py-6 px-10 rounded-2xl hover:bg-[#00e65c] hover:scale-105 transition-all duration-300 animate-pulse-accent shadow-[0_0_40px_rgba(0,255,102,0.4)] w-full md:w-auto uppercase tracking-wide"
+          className="group relative inline-flex items-center justify-center gap-3 bg-brand-accent text-brand-dark font-black text-lg md:text-xl py-4 px-8 rounded-2xl hover:bg-[#00e65c] hover:scale-105 transition-all duration-300 animate-pulse-accent shadow-[0_0_20px_rgba(0,255,102,0.4)] w-full md:w-auto uppercase tracking-wide"
         >
           👉 QUERO DESCOBRIR O MEU PRÓXIMO PASSO
         </button>
@@ -74,7 +74,7 @@ export default function LandingPage() {
       {/* Dobra 2: The Story / The Value */}
       <section className="relative z-10 bg-brand-dark py-32 px-4 border-y border-white/5 relative overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-px bg-gradient-to-r from-transparent via-brand-accent/50 to-transparent"></div>
-        
+
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl md:text-5xl font-display font-bold text-center mb-16 text-white leading-tight">
             Responda com sinceridade: <br className="hidden md:block" />
@@ -162,7 +162,7 @@ export default function LandingPage() {
 
             <button
               onClick={() => setIsPopupOpen(true)}
-              className="group relative inline-flex items-center justify-center gap-3 bg-brand-accent text-brand-dark font-black text-xl md:text-2xl py-6 px-10 rounded-2xl hover:bg-[#00e65c] hover:scale-105 transition-all duration-300 animate-pulse-accent shadow-[0_0_40px_rgba(0,255,102,0.4)] w-full md:w-auto uppercase tracking-wide"
+              className="group relative inline-flex items-center justify-center gap-3 bg-brand-accent text-brand-dark font-black text-lg md:text-xl py-4 px-8 rounded-2xl hover:bg-[#00e65c] hover:scale-105 transition-all duration-300 animate-pulse-accent shadow-[0_0_20px_rgba(0,255,102,0.4)] w-full md:w-auto uppercase tracking-wide"
             >
               📲 ENTRAR NO GRUPO E GARANTIR MEU ACESSO
             </button>
