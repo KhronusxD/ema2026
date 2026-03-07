@@ -25,7 +25,7 @@ export default function LandingPage() {
           PARA CRISTÃOS QUE QUEIMAM POR MISSÕES, MAS ESTÃO TRAVADOS:
         </div>
 
-        <h1 className="text-3xl md:text-5xl lg:text-6xl font-display font-black leading-[1.15] tracking-tight mb-8 text-white drop-shadow-2xl max-w-5xl">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-black leading-[1.2] tracking-tight mb-8 text-white drop-shadow-2xl max-w-5xl">
           Você Sente o Chamado, Mas Não Sabe Por Onde Começar? <br className="hidden md:block" />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-emerald-300">
             Descubra o Mapa Exato Para Viver a Missão na Prática.
@@ -73,7 +73,7 @@ export default function LandingPage() {
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-px bg-gradient-to-r from-transparent via-brand-accent/50 to-transparent"></div>
 
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl md:text-5xl font-display font-bold text-center mb-16 text-white leading-tight">
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-center mb-16 text-white leading-tight">
             Responda com sinceridade: <br className="hidden md:block" />
             <span className="text-brand-accent">isso acontece com você?</span>
           </h2>
@@ -113,7 +113,7 @@ export default function LandingPage() {
       {/* Dobra 3: The Offer & Scarcity */}
       <section className="relative z-10 py-32 px-4">
         <div className="max-w-5xl mx-auto bg-gradient-to-b from-white/5 to-transparent p-10 md:p-16 rounded-3xl border border-white/10 backdrop-blur-md">
-          <h2 className="text-4xl md:text-5xl font-display font-black mb-16 text-center text-white leading-tight">
+          <h2 className="text-3xl md:text-4xl font-display font-black mb-16 text-center text-white leading-tight">
             O que vamos revelar <br className="hidden md:block" />
             <span className="text-brand-accent">nesta Quinta-Feira:</span>
           </h2>
@@ -177,7 +177,7 @@ export default function LandingPage() {
             <h2 className="font-sans font-bold text-sm text-brand-accent uppercase tracking-widest mb-4">
               Prático Missionário
             </h2>
-            <h3 className="font-display font-black text-4xl md:text-5xl text-white mb-6">
+            <h3 className="font-display font-black text-3xl md:text-4xl text-white mb-6">
               Onde a teoria encontra a vida.
             </h3>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto">
@@ -200,7 +200,7 @@ export default function LandingPage() {
                   <MapPin className="w-6 h-6 mr-2" />
                   <span className="text-sm font-bold uppercase tracking-wider">Internacional</span>
                 </div>
-                <h4 className="font-display font-black text-4xl mb-3 text-white drop-shadow-md">Uruguai</h4>
+                <h4 className="font-display font-black text-3xl mb-3 text-white drop-shadow-md">Uruguai</h4>
                 <p className="text-gray-300 text-lg leading-relaxed">
                   Praticando a missão transcultural urbana e apoiando igrejas e missionários locais em Montevidéu.
                 </p>
@@ -221,7 +221,7 @@ export default function LandingPage() {
                   <MapPin className="w-6 h-6 mr-2" />
                   <span className="text-sm font-bold uppercase tracking-wider">Nordeste</span>
                 </div>
-                <h4 className="font-display font-black text-4xl mb-3 text-white drop-shadow-md">Sertão</h4>
+                <h4 className="font-display font-black text-3xl mb-3 text-white drop-shadow-md">Sertão</h4>
                 <p className="text-gray-300 text-lg leading-relaxed">
                   Servindo comunidades sertanejas com o Evangelho de forma prática e contextualizada.
                 </p>
@@ -242,7 +242,7 @@ export default function LandingPage() {
                   <MapPin className="w-6 h-6 mr-2" />
                   <span className="text-sm font-bold uppercase tracking-wider">Norte</span>
                 </div>
-                <h4 className="font-display font-black text-4xl mb-3 text-white drop-shadow-md">Amazônia</h4>
+                <h4 className="font-display font-black text-3xl mb-3 text-white drop-shadow-md">Amazônia</h4>
                 <p className="text-gray-300 text-lg leading-relaxed">
                   Respeitando a cultura, promovendo cuidado integral e fortalecendo a Igreja na região.
                 </p>
@@ -255,7 +255,7 @@ export default function LandingPage() {
       {/* Testimonials Section */}
       <section className="relative z-10 py-32 px-4 border-t border-white/5">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-display font-black text-center mb-16 text-white leading-tight">
+          <h2 className="text-3xl md:text-4xl font-display font-black text-center mb-16 text-white leading-tight">
             Quem já viveu <br className="hidden md:block" />
             <span className="text-brand-accent">a missão na pele:</span>
           </h2>
