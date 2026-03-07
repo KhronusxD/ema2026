@@ -265,18 +265,16 @@ export default function LandingPage() {
             <div>
               <h3 className="text-2xl font-bold text-white mb-8 border-l-4 border-brand-accent pl-4">Relatos Sinceros</h3>
               <div className="grid grid-cols-2 gap-4">
-                {/* Reel Placeholder 1 */}
-                <div className="aspect-[9/16] bg-brand-dark rounded-3xl overflow-hidden shadow-2xl relative group cursor-pointer border border-white/10" onClick={() => setIsPopupOpen(true)}>
-                  <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=2070&auto=format&fit=crop" alt="Testimonial Reel" className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity duration-300" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-16 h-16 bg-brand-accent/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                      <Play className="text-brand-accent" fill="currentColor" size={24} />
-                    </div>
-                  </div>
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <p className="text-white font-bold text-sm uppercase">"Mudou minha visão..."</p>
-                  </div>
+                {/* Reel 1 - YouTube Shorts */}
+                <div className="aspect-[9/16] bg-brand-dark rounded-3xl overflow-hidden shadow-2xl relative border border-white/10">
+                  <iframe
+                    className="w-full h-full object-cover"
+                    src="https://www.youtube.com/embed/DOc732vX6dU"
+                    title="Testemunho EMA 2026"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  ></iframe>
                 </div>
 
                 {/* Reel Placeholder 2 */}
