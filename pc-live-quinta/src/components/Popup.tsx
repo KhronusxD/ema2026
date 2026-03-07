@@ -56,7 +56,7 @@ export default function Popup({ isOpen, onClose }: PopupProps) {
               required
             />
           </div>
-          
+
           <div>
             <label htmlFor="email" className="sr-only">
               E-mail
@@ -74,7 +74,7 @@ export default function Popup({ isOpen, onClose }: PopupProps) {
 
           <button
             type="submit"
-            className="w-full flex items-center justify-center gap-2 bg-brand-accent text-brand-dark font-black text-lg py-4 px-6 rounded-2xl hover:bg-[#00e65c] transition-all duration-300 shadow-[0_0_30px_rgba(0,255,102,0.3)] hover:shadow-[0_0_40px_rgba(0,255,102,0.5)] uppercase tracking-wide"
+            className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-brand-accent via-[#00e65c] to-brand-accent bg-[length:200%_auto] text-brand-dark font-black text-lg py-4 px-6 rounded-2xl transition-all duration-300 animate-gradient-x shadow-[0_0_30px_rgba(0,255,102,0.3)] hover:shadow-[0_0_40px_rgba(0,255,102,0.5)] uppercase tracking-wide hover:scale-[1.02]"
           >
             CONTINUAR PARA O GRUPO VIP
             <ArrowRight size={24} />

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { CheckCircle2, Clock, Play, Calendar, XCircle, MapPin, Quote } from 'lucide-react';
 import FloatingElements from '../components/FloatingElements';
 import Popup from '../components/Popup';
+import { FadeInScroll } from '../components/FadeInScroll';
 
 export default function LandingPage() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -59,7 +60,7 @@ export default function LandingPage() {
 
         <button
           onClick={() => setIsPopupOpen(true)}
-          className="group relative inline-flex items-center justify-center gap-3 bg-brand-accent text-brand-dark font-black text-lg md:text-xl py-4 px-8 rounded-2xl hover:bg-[#00e65c] hover:scale-105 transition-all duration-300 animate-pulse-accent shadow-[0_0_20px_rgba(0,255,102,0.4)] w-full md:w-auto uppercase tracking-wide"
+          className="group relative inline-flex items-center justify-center gap-3 bg-gradient-to-r from-brand-accent via-[#00e65c] to-brand-accent bg-[length:200%_auto] text-brand-dark font-black text-lg md:text-xl py-4 px-8 rounded-2xl hover:scale-105 transition-all duration-300 animate-gradient-x shadow-[0_0_20px_rgba(0,255,102,0.4)] w-full md:w-auto uppercase tracking-wide"
         >
           👉 QUERO DESCOBRIR O MEU PRÓXIMO PASSO
         </button>
@@ -69,7 +70,7 @@ export default function LandingPage() {
       <section className="relative z-10 bg-brand-dark py-32 px-4 border-y border-white/5 relative overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-px bg-gradient-to-r from-transparent via-brand-accent/50 to-transparent"></div>
 
-        <div className="max-w-5xl mx-auto">
+        <FadeInScroll className="max-w-5xl mx-auto">
           <h2 className="text-3xl md:text-5xl font-display font-bold text-center mb-16 text-white leading-tight">
             Responda com sinceridade: <br className="hidden md:block" />
             <span className="text-brand-accent">isso acontece com você?</span>
@@ -104,12 +105,12 @@ export default function LandingPage() {
               É por isso que criamos um ambiente onde a teologia profunda encontra a prática real. Um formato onde você é discipulado ao vivo por quem vive a missão todos os dias, de forma online e síncrona (interação em tempo real), mas com um desdobramento físico e radical: uma imersão prática na Amazônia.
             </p>
           </div>
-        </div>
+        </FadeInScroll>
       </section>
 
       {/* Dobra 3: The Offer & Scarcity */}
       <section className="relative z-10 py-32 px-4">
-        <div className="max-w-5xl mx-auto bg-gradient-to-b from-white/5 to-transparent p-10 md:p-16 rounded-3xl border border-white/10 backdrop-blur-md">
+        <FadeInScroll className="max-w-5xl mx-auto bg-gradient-to-b from-white/5 to-transparent p-10 md:p-16 rounded-3xl border border-white/10 backdrop-blur-md">
           <h2 className="text-4xl md:text-5xl font-display font-black mb-16 text-center text-white leading-tight">
             O que vamos revelar <br className="hidden md:block" />
             <span className="text-brand-accent">nesta Quinta-Feira:</span>
@@ -156,12 +157,12 @@ export default function LandingPage() {
 
             <button
               onClick={() => setIsPopupOpen(true)}
-              className="group relative inline-flex items-center justify-center gap-3 bg-brand-accent text-brand-dark font-black text-lg md:text-xl py-4 px-8 rounded-2xl hover:bg-[#00e65c] hover:scale-105 transition-all duration-300 animate-pulse-accent shadow-[0_0_20px_rgba(0,255,102,0.4)] w-full md:w-auto uppercase tracking-wide"
+              className="group relative inline-flex items-center justify-center gap-3 bg-gradient-to-r from-brand-accent via-[#00e65c] to-brand-accent bg-[length:200%_auto] text-brand-dark font-black text-lg md:text-xl py-4 px-8 rounded-2xl hover:scale-105 transition-all duration-300 animate-gradient-x shadow-[0_0_20px_rgba(0,255,102,0.4)] w-full md:w-auto uppercase tracking-wide"
             >
               📲 ENTRAR NO GRUPO E GARANTIR MEU ACESSO
             </button>
           </div>
-        </div>
+        </FadeInScroll>
       </section>
 
       {/* Prático Missionário Section */}
@@ -169,7 +170,7 @@ export default function LandingPage() {
         {/* Background Texture */}
         <div className="absolute inset-0 z-0 bg-white/5 opacity-20"></div>
 
-        <div className="max-w-6xl mx-auto relative z-10">
+        <FadeInScroll className="max-w-6xl mx-auto relative z-10">
           <div className="text-center mb-16">
             <h2 className="font-sans font-bold text-sm text-brand-accent uppercase tracking-widest mb-4">
               Prático Missionário
@@ -246,12 +247,12 @@ export default function LandingPage() {
               </div>
             </div>
           </div>
-        </div>
+        </FadeInScroll>
       </section>
 
       {/* Testimonials Section */}
       <section className="relative z-10 py-32 px-4 border-t border-white/5">
-        <div className="max-w-6xl mx-auto">
+        <FadeInScroll className="max-w-6xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-display font-black text-center mb-16 text-white leading-tight">
             Quem já viveu <br className="hidden md:block" />
             <span className="text-brand-accent">a missão na pele:</span>
@@ -331,12 +332,12 @@ export default function LandingPage() {
           <div className="mt-16 text-center">
             <button
               onClick={() => setIsPopupOpen(true)}
-              className="group relative inline-flex items-center justify-center gap-3 bg-brand-accent text-brand-dark font-black text-lg md:text-xl py-4 px-8 rounded-2xl hover:bg-[#00e65c] hover:scale-105 transition-all duration-300 animate-pulse-accent shadow-[0_0_20px_rgba(0,255,102,0.4)] w-full md:w-auto uppercase tracking-wide"
+              className="group relative inline-flex items-center justify-center gap-3 bg-gradient-to-r from-brand-accent via-[#00e65c] to-brand-accent bg-[length:200%_auto] text-brand-dark font-black text-lg md:text-xl py-4 px-8 rounded-2xl hover:scale-105 transition-all duration-300 animate-gradient-x shadow-[0_0_20px_rgba(0,255,102,0.4)] w-full md:w-auto uppercase tracking-wide"
             >
               🚀 QUERO FAZER PARTE DESSA HISTÓRIA
             </button>
           </div>
-        </div>
+        </FadeInScroll>
       </section>
 
       <Popup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
