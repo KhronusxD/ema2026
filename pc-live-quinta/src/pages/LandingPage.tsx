@@ -36,19 +36,16 @@ export default function LandingPage() {
           Participe de um Encontro Online e Inédito onde vamos revelar por que apenas a "vontade de ir" não é suficiente – e como você pode forjar uma base teológica sólida sem precisar abandonar sua cidade agora.
         </p>
 
-        {/* Video Player Placeholder */}
-        <div className="w-full max-w-4xl mx-auto aspect-video bg-brand-dark rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.5)] border border-white/10 relative group mb-12 cursor-pointer" onClick={() => setIsPopupOpen(true)}>
-          <img
-            src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?q=80&w=2070&auto=format&fit=crop"
-            alt="Video Thumbnail"
-            className="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-40 transition-opacity duration-500"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-brand-bg/80 via-transparent to-transparent"></div>
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="w-24 h-24 bg-brand-accent rounded-full flex items-center justify-center pl-2 shadow-[0_0_40px_rgba(0,255,102,0.6)] group-hover:scale-110 transition-transform duration-300">
-              <Play className="text-brand-dark" size={48} fill="currentColor" />
-            </div>
-          </div>
+        {/* Video Player */}
+        <div className="w-full max-w-4xl mx-auto aspect-video bg-brand-dark rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.5)] border border-white/10 relative mb-12">
+          <iframe
+            className="w-full h-full"
+            src="https://www.youtube.com/embed/Q4xsI7JGb58?autoplay=0&rel=0"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          ></iframe>
         </div>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-white font-medium mb-10 bg-white/5 backdrop-blur-md px-8 py-4 rounded-2xl border border-white/10 shadow-xl">
