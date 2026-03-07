@@ -17,6 +17,11 @@ export default function Popup({ isOpen, onClose }: PopupProps) {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (name.trim() && email.trim()) {
+      // Dispara evento pro GTM
+      const dataLayer = (window as any).dataLayer || [];
+      dataLayer.push({
+        'event': 'form_lead_gerado'
+      });
       navigate('/obrigado');
     }
   };
