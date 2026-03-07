@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { CheckCircle2, Clock, Play, Calendar, XCircle } from 'lucide-react';
+import { CheckCircle2, Clock, Play, Calendar, XCircle, MapPin, Quote } from 'lucide-react';
 import FloatingElements from '../components/FloatingElements';
 import Popup from '../components/Popup';
 
@@ -129,7 +129,7 @@ export default function LandingPage() {
                 desc: 'Como estruturar sua base teológica e missional diretamente da sua casa, com professores que estão no front.',
               },
               {
-                title: 'Da Teoria à Selva',
+                title: 'Da Teoria à Prática',
                 desc: 'Como funciona o nosso Prático Missionário e o que é necessário para você viver essa experiência.',
               },
             ].map((item, index) => (
@@ -162,6 +162,183 @@ export default function LandingPage() {
               className="group relative inline-flex items-center justify-center gap-3 bg-brand-accent text-brand-dark font-black text-lg md:text-xl py-4 px-8 rounded-2xl hover:bg-[#00e65c] hover:scale-105 transition-all duration-300 animate-pulse-accent shadow-[0_0_20px_rgba(0,255,102,0.4)] w-full md:w-auto uppercase tracking-wide"
             >
               📲 ENTRAR NO GRUPO E GARANTIR MEU ACESSO
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Prático Missionário Section */}
+      <section className="relative z-10 py-32 px-4 bg-brand-bg relative overflow-hidden">
+        {/* Background Texture */}
+        <div className="absolute inset-0 z-0 bg-white/5 opacity-20"></div>
+
+        <div className="max-w-6xl mx-auto relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="font-sans font-bold text-sm text-brand-accent uppercase tracking-widest mb-4">
+              Prático Missionário
+            </h2>
+            <h3 className="font-display font-black text-4xl md:text-5xl text-white mb-6">
+              Onde a teoria encontra a vida.
+            </h3>
+            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+              Escolha seu campo de atuação para a etapa prática em Julho.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Card 1 - Uruguai */}
+            <div className="relative group overflow-hidden rounded-3xl h-[400px] border border-white/10 shadow-2xl">
+              <img
+                src="/trips/uruguai.jpeg"
+                alt="Uruguai"
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-90"></div>
+              <div className="absolute bottom-0 left-0 p-8 w-full z-10">
+                <div className="flex items-center text-brand-accent mb-3">
+                  <MapPin className="w-6 h-6 mr-2" />
+                  <span className="text-sm font-bold uppercase tracking-wider">Internacional</span>
+                </div>
+                <h4 className="font-display font-black text-4xl mb-3 text-white drop-shadow-md">Uruguai</h4>
+                <p className="text-gray-300 text-lg leading-relaxed">
+                  Praticando a missão transcultural urbana e apoiando igrejas e missionários locais em Montevidéu.
+                </p>
+              </div>
+            </div>
+
+            {/* Card 2 - Sertão */}
+            <div className="relative group overflow-hidden rounded-3xl h-[400px] border border-white/10 shadow-2xl">
+              <img
+                src="/trips/sertao.jpeg"
+                alt="Sertão"
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-90"></div>
+              <div className="absolute bottom-0 left-0 p-8 w-full z-10">
+                <div className="flex items-center text-brand-accent mb-3">
+                  <MapPin className="w-6 h-6 mr-2" />
+                  <span className="text-sm font-bold uppercase tracking-wider">Nordeste</span>
+                </div>
+                <h4 className="font-display font-black text-4xl mb-3 text-white drop-shadow-md">Sertão</h4>
+                <p className="text-gray-300 text-lg leading-relaxed">
+                  Servindo comunidades sertanejas com o Evangelho de forma prática e contextualizada.
+                </p>
+              </div>
+            </div>
+
+            {/* Card 3 - Amazônia */}
+            <div className="relative group overflow-hidden rounded-3xl h-[400px] border border-white/10 shadow-2xl">
+              <img
+                src="/trips/amazonia.jpeg"
+                alt="Amazônia"
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-90"></div>
+              <div className="absolute bottom-0 left-0 p-8 w-full z-10">
+                <div className="flex items-center text-brand-accent mb-3">
+                  <MapPin className="w-6 h-6 mr-2" />
+                  <span className="text-sm font-bold uppercase tracking-wider">Norte</span>
+                </div>
+                <h4 className="font-display font-black text-4xl mb-3 text-white drop-shadow-md">Amazônia</h4>
+                <p className="text-gray-300 text-lg leading-relaxed">
+                  Respeitando a cultura, promovendo cuidado integral e fortalecendo a Igreja na região.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="relative z-10 py-32 px-4 border-t border-white/5">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-display font-black text-center mb-16 text-white leading-tight">
+            Quem já viveu <br className="hidden md:block" />
+            <span className="text-brand-accent">a missão na pele:</span>
+          </h2>
+
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Video Reels Section */}
+            <div>
+              <h3 className="text-2xl font-bold text-white mb-8 border-l-4 border-brand-accent pl-4">Relatos Sinceros</h3>
+              <div className="grid grid-cols-2 gap-4">
+                {/* Reel Placeholder 1 */}
+                <div className="aspect-[9/16] bg-brand-dark rounded-3xl overflow-hidden shadow-2xl relative group cursor-pointer border border-white/10" onClick={() => setIsPopupOpen(true)}>
+                  <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=2070&auto=format&fit=crop" alt="Testimonial Reel" className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-16 h-16 bg-brand-accent/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <Play className="text-brand-accent" fill="currentColor" size={24} />
+                    </div>
+                  </div>
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <p className="text-white font-bold text-sm uppercase">"Mudou minha visão..."</p>
+                  </div>
+                </div>
+
+                {/* Reel Placeholder 2 */}
+                <div className="aspect-[9/16] bg-brand-dark rounded-3xl overflow-hidden shadow-2xl relative group cursor-pointer border border-white/10" onClick={() => setIsPopupOpen(true)}>
+                  <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop" alt="Testimonial Reel 2" className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-16 h-16 bg-brand-accent/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <Play className="text-brand-accent" fill="currentColor" size={24} />
+                    </div>
+                  </div>
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <p className="text-white font-bold text-sm uppercase">"Achei o meu lugar"</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Text Testimonials Section */}
+            <div className="space-y-6">
+              <h3 className="text-2xl font-bold text-white mb-8 border-l-4 border-brand-accent pl-4">O que eles dizem</h3>
+
+              <div className="bg-white/5 border border-white/10 p-8 rounded-3xl backdrop-blur-sm relative">
+                <Quote className="absolute top-6 right-8 text-brand-accent/20" size={60} />
+                <p className="text-gray-300 text-lg md:text-xl leading-relaxed italic mb-6 relative z-10">
+                  "Eu sempre quis participar de missões, mas nunca achei que tinha preparo. O EMA me deu a base teológica e o empurrão prático que me faltava. Estar na Amazônia abriu meus olhos para a urgência do Reino."
+                </p>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center font-bold text-brand-accent text-xl">
+                    M
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-white">Mateus V.</h4>
+                    <p className="text-sm text-gray-500">Turma de 2024</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white/5 border border-white/10 p-8 rounded-3xl backdrop-blur-sm relative">
+                <Quote className="absolute top-6 right-8 text-brand-accent/20" size={60} />
+                <p className="text-gray-300 text-lg md:text-xl leading-relaxed italic mb-6 relative z-10">
+                  "O direcionamento com missionários experientes e o formato online foi perfeito. Eu moro no sul do país e não precisaria me mudar para fazer o treinamento, e o Prático no Sertão foi inesquecível."
+                </p>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center font-bold text-brand-accent text-xl">
+                    S
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-white">Sarah T.</h4>
+                    <p className="text-sm text-gray-500">Turma de 2025</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-16 text-center">
+            <button
+              onClick={() => setIsPopupOpen(true)}
+              className="group relative inline-flex items-center justify-center gap-3 bg-brand-accent text-brand-dark font-black text-lg md:text-xl py-4 px-8 rounded-2xl hover:bg-[#00e65c] hover:scale-105 transition-all duration-300 animate-pulse-accent shadow-[0_0_20px_rgba(0,255,102,0.4)] w-full md:w-auto uppercase tracking-wide"
+            >
+              🚀 QUERO FAZER PARTE DESSA HISTÓRIA
             </button>
           </div>
         </div>
