@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { X, ArrowRight } from 'lucide-react';
 
 interface PopupProps {
@@ -10,14 +9,13 @@ interface PopupProps {
 export default function Popup({ isOpen, onClose }: PopupProps) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const navigate = useNavigate();
 
   if (!isOpen) return null;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (name.trim() && email.trim()) {
-      navigate('/obrigado');
+      window.location.href = 'https://missoeseavivamento.com/pc-live-quinta/obrigado';
     }
   };
 
