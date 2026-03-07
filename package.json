@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build:main": "vite build",
+    "build:pc": "cd pc-live-quinta && npm install --no-fund --no-audit && npm run build && mkdir -p ../dist/pc-live-quinta && cp -a dist/. ../dist/pc-live-quinta/",
+    "build": "npm run build:main && npm run build:pc",
     "preview": "vite preview"
   },
   "dependencies": {
