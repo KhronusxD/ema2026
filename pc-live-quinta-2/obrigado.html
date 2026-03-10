@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <!-- Google Tag Manager -->
+    <!-- End Google Tag Manager -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quase Lá! - O Mapa do Chamado</title>
+
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'ema-green': '#27AE60',
+                        'onyx': '#1A1A1A',
+                        'off-white': '#F9FAFB',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body
+    class="bg-onyx text-white font-sans antialiased relative min-h-screen flex items-center justify-center p-4 overflow-hidden">
+
+    <!-- Background Glows -->
+    <div
+        class="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] bg-red-500/10 blur-[120px] rounded-full pointer-events-none">
+    </div>
+    <div
+        class="absolute bottom-[-20%] right-[-10%] w-[50%] h-[50%] bg-ema-green/10 blur-[120px] rounded-full pointer-events-none">
+    </div>
+
+    <div
+        class="max-w-3xl w-full bg-onyx/80 backdrop-blur-xl rounded-[2.5rem] shadow-2xl p-8 md:p-14 text-center border border-white/10 relative z-10">
+
+        <!-- Warning Icon -->
+        <div
+            class="inline-flex items-center justify-center w-24 h-24 rounded-full bg-red-500/20 text-red-500 mb-8 animate-bounce border border-red-500/30 shadow-[0_0_30px_rgba(239,68,68,0.3)]">
+            <i class="ph-bold ph-warning text-5xl"></i>
+        </div>
+
+        <h1
+            class="text-4xl md:text-5xl lg:text-6xl font-heading font-black text-red-500 mb-6 uppercase tracking-tight drop-shadow-lg leading-tight">
+            ⚠️ ESPERE! SEU LUGAR AINDA NÃO ESTÁ GARANTIDO.
+        </h1>
+
+        <h2 class="text-xl md:text-2xl font-heading font-bold text-white mb-6 leading-relaxed">
+            Falta apenas um clique para você confirmar sua presença na nossa reunião de quinta-feira (12/03).
+        </h2>
+
+        <p class="text-lg md:text-xl text-gray-300 mb-10 leading-relaxed font-medium">
+            Para evitar curiosos, o link do Google Meet será enviado <strong class="text-white">EXCLUSIVAMENTE</strong>
+            no nosso Grupo VIP do WhatsApp.
+        </p>
+
+        <div
+            class="bg-ema-green/10 border-2 border-ema-green/30 rounded-3xl p-6 sm:p-8 mb-12 text-left flex flex-col sm:flex-row items-center sm:items-start gap-6 shadow-[0_0_30px_rgba(39,174,96,0.1)] max-w-2xl mx-auto">
+            <div class="flex-shrink-0 bg-ema-green/20 p-4 rounded-2xl">
+                <i class="ph-fill ph-gift text-ema-green text-4xl"></i>
+            </div>
+            <div class="text-center sm:text-left">
+                <h3 class="font-heading font-black text-ema-green text-xl mb-2 uppercase tracking-wide">
+                    Aviso Importante:
+                </h3>
+                <p class="text-gray-200 text-lg leading-relaxed">
+                    Quem estiver no grupo e comparecer ao vivo na quinta-feira, terá acesso a uma <strong>condição
+                        especial (com bônus absurdos)</strong> para embarcar com a gente esse ano.
+                </p>
+            </div>
+        </div>
+
+        <a href="https://chat.whatsapp.com/" target="_blank" rel="noopener noreferrer"
+            class="group relative inline-flex items-center justify-center gap-3 bg-[#25D366] text-white font-heading font-black text-lg md:text-2xl py-5 px-8 sm:px-12 rounded-2xl hover:bg-[#20bd5a] hover:scale-105 transition-all duration-300 shadow-[0_0_30px_rgba(37,211,102,0.4)] w-full uppercase tracking-wide">
+            <i class="ph-fill ph-whatsapp text-4xl"></i>
+            💬 QUERO ENTRAR NO GRUPO VIP AGORA
+        </a>
+    </div>
+
+</body>
+
+</html>

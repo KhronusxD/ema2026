@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Mapa do Chamado - Missões EMA</title>
+
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;700;800&family=Space+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'ema-green': '#27AE60',
+                        'ema-green-dark': '#219653',
+                        'onyx': '#1A1A1A',
+                        'off-white': '#F9FAFB',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif'],
+                        mono: ['Space Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Animations */
+        @keyframes float {
+            0% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(5deg);
+            }
+
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+        }
+
+        @keyframes spin-slow {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes pulse-glow {
+
+            0%,
+            100% {
+                box-shadow: 0 0 15px rgba(39, 174, 96, 0.5);
+            }
+
+            50% {
+                box-shadow: 0 0 30px rgba(39, 174, 96, 0.8);
+            }
+        }
+
+        @keyframes dash {
+            to {
+                stroke-dashoffset: -1000;
+            }
+        }
+
+        @keyframes drift {
+            0% {
+                transform: translateX(-15vw);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 0.6;
+            }
+
+            90% {
+                opacity: 0.6;
+            }
+
+            100% {
+                transform: translateX(115vw);
+                opacity: 0;
+            }
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .animate-float-delayed {
+            animation: float 7s ease-in-out infinite 1s;
+        }
+
+        .animate-spin-slow {
+            animation: spin-slow 25s linear infinite;
+        }
+
+        .animate-pulse-glow {
+            animation: pulse-glow 2s infinite;
+        }
+
+        .animate-dash {
+            stroke-dasharray: 12, 12;
+            animation: dash 40s linear infinite;
+        }
+
+        .animate-drift-1 {
+            animation: drift 45s linear infinite;
+        }
+
+        .animate-drift-2 {
+            animation: drift 60s linear infinite 15s;
+        }
+
+        .animate-drift-3 {
+            animation: drift 35s linear infinite 5s;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+        }
+
+        .glass-modal {
+            background: rgba(26, 26, 26, 0.85);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        /* Hide scrollbar when modal is open */
+        body.modal-open {
+            overflow: hidden;
+        }
+
+        /* Stamp effect */
+        .stamp {
+            mask-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="black"/><circle cx="50" cy="50" r="45" fill="black" stroke="white" stroke-width="2" stroke-dasharray="4 4"/></svg>');
+            -webkit-mask-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="black"/><circle cx="50" cy="50" r="45" fill="black" stroke="white" stroke-width="2" stroke-dasharray="4 4"/></svg>');
+        }
+    </style>
+</head>
+
+<body class="bg-off-white text-onyx font-sans antialiased relative overflow-x-hidden">
+
+    <!-- Rota de Voo Global (Linha Tracejada Animada) -->
+    <svg class="fixed inset-0 w-full h-full pointer-events-none z-0 opacity-30" viewBox="0 0 100 100"
+        preserveAspectRatio="none">
+        <path d="M-10,20 Q30,10 50,50 T110,80" fill="none" stroke="#27AE60" stroke-width="0.3" class="animate-dash">
+        </path>
+        <path d="M110,30 Q70,60 40,40 T-10,70" fill="none" stroke="#27AE60" stroke-width="0.2" class="animate-dash"
+            style="animation-direction: reverse; animation-duration: 60s;"></path>
+    </svg>
+
+    <!-- Nuvens Flutuantes Globais -->
+    <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden opacity-40">
+        <i class="ph-fill ph-cloud text-white text-6xl absolute top-[15%] left-0 animate-drift-1 drop-shadow-md"></i>
+        <i
+            class="ph-fill ph-cloud text-white text-8xl absolute top-[45%] left-0 animate-drift-2 drop-shadow-lg opacity-70"></i>
+        <i class="ph-fill ph-cloud text-white text-5xl absolute top-[75%] left-0 animate-drift-3 drop-shadow-sm"></i>
+    </div>
+
+    <!-- DOBRA 1: O EMBARQUE (Hero Section) -->
+    <section
+        class="relative min-h-screen flex items-center justify-center pt-20 pb-16 px-4 sm:px-6 lg:px-8 z-10 overflow-hidden">
+        <!-- Background Image: Mapa/Viagem -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1488646953014-c8cb39121966?q=80&w=2070&auto=format&fit=crop"
+                alt="Travel Map" class="w-full h-full object-cover opacity-30" referrerPolicy="no-referrer" />
+            <div class="absolute inset-0 bg-gradient-to-b from-off-white/60 via-off-white/90 to-off-white"></div>
+        </div>
+
+        <!-- Elementos Flutuantes Hero -->
+        <div class="absolute inset-0 pointer-events-none z-0">
+            <i
+                class="ph-fill ph-paper-plane-tilt text-ema-green text-5xl absolute top-1/4 left-[10%] animate-float opacity-40 drop-shadow-lg"></i>
+            <i
+                class="ph ph-compass text-ema-green text-6xl absolute bottom-1/4 right-[10%] animate-spin-slow opacity-30"></i>
+        </div>
+
+        <div class="max-w-4xl mx-auto text-center gs-reveal relative z-10">
+            <div
+                class="inline-block mb-6 px-5 py-2 rounded-full bg-white/80 backdrop-blur-md border border-ema-green/30 text-ema-green-dark font-semibold text-sm tracking-wide shadow-sm">
+                <i class="ph-fill ph-ticket mr-2"></i> PARA CRISTÃOS QUE ESTÃO CANSADOS DE APENAS OUVIR HISTÓRIAS
+                MISSIONÁRIAS E QUEREM COMEÇAR A VIVÊ-LAS:
+            </div>
+            <h1
+                class="font-heading text-4xl sm:text-5xl md:text-6xl font-bold text-onyx leading-tight mb-6 drop-shadow-sm">
+                Chegou a Sua Vez de Ir Para o Campo. <span class="text-ema-green">Descubra Como Viver o Prático
+                    Missionário Ainda Este Ano.</span>
+            </h1>
+            <p class="text-lg sm:text-xl text-gray-700 mb-8 max-w-2xl mx-auto font-medium">
+                Da Amazônia ao Uruguai, passando pelo Sertão. Participe do nosso Encontro Ao Vivo e entenda como você
+                pode embarcar com a EMA, forjando sua base teológica 100% online antes de arrumar as malas.
+            </p>
+
+            <div
+                class="flex flex-col sm:flex-row items-center justify-center gap-3 mb-10 text-onyx font-medium bg-white/90 backdrop-blur-md py-3 px-6 rounded-xl inline-flex shadow-md border border-gray-200">
+                <div class="flex items-center gap-2 text-ema-green">
+                    <i class="ph-fill ph-alarm text-2xl"></i>
+                    <span class="font-bold text-onyx uppercase">Reunião de Embarque:</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="ph-fill ph-calendar-blank text-ema-green text-2xl hidden sm:block"></i>
+                    <span>Quinta-feira, 12 de Março</span>
+                </div>
+                <span class="hidden sm:inline text-gray-300">|</span>
+                <div class="flex items-center gap-2">
+                    <i class="ph-fill ph-clock text-ema-green text-2xl hidden sm:block"></i>
+                    <span>19h30 (Brasília)</span>
+                </div>
+                <span class="hidden sm:inline text-gray-300">|</span>
+                <div class="flex items-center gap-2">
+                    <i class="ph-fill ph-video-camera text-ema-green text-2xl"></i>
+                    <span>Google Meet</span>
+                </div>
+            </div>
+
+            <div>
+                <button onclick="openModal()"
+                    class="animate-pulse-glow bg-ema-green hover:bg-ema-green-dark text-white font-heading font-bold text-lg sm:text-xl py-4 px-8 sm:px-12 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-xl flex items-center justify-center gap-3 mx-auto w-full sm:w-auto border-b-4 border-black/20 active:border-b-0 active:translate-y-1">
+                    <i class="ph-bold ph-hand-pointing text-2xl"></i>
+                    QUERO DESCOBRIR COMO EMBARCAR NESSA MISSÃO
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- DOBRA 2: A BÚSSOLA -->
+    <section class="py-24 px-4 sm:px-6 lg:px-8 relative z-10 bg-white overflow-hidden">
+        <!-- Detalhe de Carimbo -->
+        <div class="absolute top-10 right-10 opacity-10 transform rotate-12 pointer-events-none">
+            <div class="w-48 h-48 rounded-full border-8 border-ema-green flex items-center justify-center p-2 stamp">
+                <div
+                    class="w-full h-full rounded-full border-4 border-ema-green flex flex-col items-center justify-center text-ema-green font-heading font-bold text-center">
+                    <span class="text-2xl tracking-widest">APPROVED</span>
+                    <span class="text-sm">AMAZON MISSION</span>
+                    <span class="text-xs mt-1">12 MAR 2026</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+            <div class="gs-reveal">
+                <div class="flex items-center gap-3 mb-4 text-ema-green font-bold tracking-wider uppercase text-sm">
+                    <i class="ph-fill ph-map-pin-line text-xl"></i>
+                    <span>O Chamado vs. A Realidade</span>
+                </div>
+                <h2 class="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-onyx mb-6 leading-tight">O seu
+                    coração queima por missões, mas os seus pés ainda não saíram do lugar?</h2>
+                <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                    Nós sabemos como é doído ler sobre os atos dos apóstolos, orar pelas nações no culto de domingo, mas
+                    na segunda-feira sentir que a sua vida não está conectada ao campo missionário real.
+                </p>
+                <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                    Você quer ir. Você sente o chamado. Mas as dúvidas paralisam: <strong>"Como eu vou?", "Quem vai me
+                        guiar?", "Eu preciso largar meu emprego e mudar de cidade agora?"</strong>.
+                </p>
+                <div
+                    class="bg-off-white border-l-4 border-ema-green p-6 rounded-r-xl shadow-sm relative overflow-hidden">
+                    <i class="ph-fill ph-quotes text-4xl text-ema-green/10 absolute top-4 right-4"></i>
+                    <p class="text-gray-700 leading-relaxed font-medium">
+                        E se você não precisasse escolher entre a sua vida atual e o seu chamado? E se a preparação
+                        pudesse chegar até a sua casa, culminando em uma viagem missionária autêntica, com os pés na
+                        terra e lidando com vidas de verdade?
+                    </p>
+                </div>
+            </div>
+
+            <!-- Ticket Card (Glassmorphism + Realismo) -->
+            <div class="gs-reveal relative group perspective-1000">
+                <div
+                    class="absolute inset-0 bg-gradient-to-tr from-ema-green/30 to-transparent rounded-3xl transform rotate-3 scale-105 transition-transform duration-500 group-hover:rotate-6">
+                </div>
+
+                <div
+                    class="glass-card rounded-3xl shadow-2xl relative overflow-hidden transition-transform duration-500 transform group-hover:-translate-y-2 bg-white/90">
+
+                    <!-- Header do Ticket -->
+                    <div class="bg-onyx text-white p-6 flex justify-between items-center">
+                        <div class="flex items-center gap-2">
+                            <i class="ph-fill ph-airplane-takeoff text-2xl text-ema-green"></i>
+                            <span class="font-heading font-bold tracking-widest">BOARDING PASS</span>
+                        </div>
+                        <span class="font-mono text-sm text-gray-400">FLIGHT EMA-26</span>
+                    </div>
+
+                    <!-- Corpo do Ticket -->
+                    <div class="p-8">
+                        <!-- Recortes laterais do ticket -->
+                        <div class="absolute top-[120px] -left-4 w-8 h-8 bg-white rounded-full shadow-inner"></div>
+                        <div class="absolute top-[120px] -right-4 w-8 h-8 bg-white rounded-full shadow-inner"></div>
+
+                        <div class="flex justify-between items-center mb-8">
+                            <div>
+                                <p class="text-xs text-gray-400 font-bold uppercase tracking-wider mb-1">Passageiro</p>
+                                <p class="font-heading font-bold text-2xl text-onyx">VOCÊ</p>
+                            </div>
+                            <div class="flex flex-col items-center px-4">
+                                <i class="ph-fill ph-airplane-right text-3xl text-ema-green mb-1"></i>
+                                <span class="text-[10px] text-gray-400 font-mono">DIRECT</span>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-xs text-gray-400 font-bold uppercase tracking-wider mb-1">Destino</p>
+                                <p class="font-heading font-bold text-2xl text-ema-green">AMAZÔNIA</p>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-3 gap-4 mb-6 border-t border-b border-gray-100 py-4">
+                            <div>
+                                <p class="text-[10px] text-gray-400 font-bold uppercase">Data</p>
+                                <p class="font-mono font-bold text-onyx text-sm">12 MAR</p>
+                            </div>
+                            <div class="text-center">
+                                <p class="text-[10px] text-gray-400 font-bold uppercase">Portão</p>
+                                <p class="font-mono font-bold text-onyx text-sm">VIP</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-[10px] text-gray-400 font-bold uppercase">Assento</p>
+                                <p class="font-mono font-bold text-onyx text-sm">1A</p>
+                            </div>
+                        </div>
+
+                        <!-- Barcode -->
+                        <div class="pt-2 flex flex-col items-center">
+                            <svg class="w-full h-12 text-onyx/80" preserveAspectRatio="none" viewBox="0 0 200 50">
+                                <rect x="0" y="0" width="4" height="50" fill="currentColor" />
+                                <rect x="6" y="0" width="2" height="50" fill="currentColor" />
+                                <rect x="12" y="0" width="8" height="50" fill="currentColor" />
+                                <rect x="24" y="0" width="4" height="50" fill="currentColor" />
+                                <rect x="32" y="0" width="2" height="50" fill="currentColor" />
+                                <rect x="38" y="0" width="6" height="50" fill="currentColor" />
+                                <rect x="48" y="0" width="10" height="50" fill="currentColor" />
+                                <rect x="62" y="0" width="2" height="50" fill="currentColor" />
+                                <rect x="68" y="0" width="6" height="50" fill="currentColor" />
+                                <rect x="78" y="0" width="4" height="50" fill="currentColor" />
+                                <rect x="86" y="0" width="8" height="50" fill="currentColor" />
+                                <rect x="98" y="0" width="2" height="50" fill="currentColor" />
+                                <rect x="104" y="0" width="6" height="50" fill="currentColor" />
+                                <rect x="114" y="0" width="10" height="50" fill="currentColor" />
+                                <rect x="128" y="0" width="4" height="50" fill="currentColor" />
+                                <rect x="136" y="0" width="2" height="50" fill="currentColor" />
+                                <rect x="142" y="0" width="8" height="50" fill="currentColor" />
+                                <rect x="154" y="0" width="6" height="50" fill="currentColor" />
+                                <rect x="164" y="0" width="2" height="50" fill="currentColor" />
+                                <rect x="170" y="0" width="4" height="50" fill="currentColor" />
+                                <rect x="178" y="0" width="8" height="50" fill="currentColor" />
+                                <rect x="190" y="0" width="4" height="50" fill="currentColor" />
+                                <rect x="198" y="0" width="2" height="50" fill="currentColor" />
+                            </svg>
+                            <p class="text-[10px] font-mono text-gray-400 mt-2 tracking-widest">01234567890123456789</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DOBRA 3: O QUE VAMOS REVELAR -->
+    <section class="py-24 px-4 sm:px-6 lg:px-8 relative z-10 overflow-hidden">
+        <!-- Background Image: Selva Amazônica -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1518182170546-076616fdacfa?q=80&w=2070&auto=format&fit=crop"
+                alt="Amazon Jungle" class="w-full h-full object-cover opacity-15" referrerPolicy="no-referrer" />
+            <div class="absolute inset-0 bg-gradient-to-t from-off-white via-off-white/95 to-off-white"></div>
+        </div>
+
+        <div class="max-w-6xl mx-auto relative z-10">
+            <div class="text-center mb-16 gs-reveal">
+                <span class="text-ema-green font-bold tracking-widest uppercase text-sm mb-2 block">O Seu Novo
+                    Campo</span>
+                <h2 class="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-onyx mb-6">O Campo é Real e Está
+                    de Portas Abertas Para Você.</h2>
+                <p class="text-lg text-gray-700 max-w-3xl mx-auto">
+                    A Escola de Missões e Avivamento (EMA) não forma teóricos. Nós formamos pessoas prontas para o
+                    front. Em julho, nossa base se move, e você poderá escolher o cenário onde a teoria encontrará a
+                    vida:
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <!-- Item 1 -->
+                <div
+                    class="glass-card p-10 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 gs-reveal text-center border-t-4 border-t-ema-green">
+                    <div
+                        class="w-20 h-20 mx-auto bg-white rounded-full flex items-center justify-center mb-6 text-ema-green shadow-md border border-gray-100">
+                        <i class="ph-fill ph-leaf text-4xl"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl text-onyx mb-4">Amazônia (Norte)</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Mergulhe nas comunidades ribeirinhas, vivendo o choque cultural e o cuidado integral onde o
+                        Brasil respira.
+                    </p>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="glass-card p-10 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 gs-reveal text-center border-t-4 border-t-ema-green"
+                    style="transition-delay: 100ms;">
+                    <div
+                        class="w-20 h-20 mx-auto bg-white rounded-full flex items-center justify-center mb-6 text-ema-green shadow-md border border-gray-100">
+                        <i class="ph-fill ph-globe-hemisphere-west text-4xl"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl text-onyx mb-4">Uruguai (Internacional)</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Atravesse fronteiras para uma missão transcultural urbana, apoiando a Igreja em um dos países
+                        mais desafiados da América do Sul.
+                    </p>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="glass-card p-10 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 gs-reveal text-center border-t-4 border-t-ema-green"
+                    style="transition-delay: 200ms;">
+                    <div
+                        class="w-20 h-20 mx-auto bg-white rounded-full flex items-center justify-center mb-6 text-ema-green shadow-md border border-gray-100">
+                        <i class="ph-fill ph-cactus text-4xl"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl text-onyx mb-4">Mossoró (Sertão)</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Sinta o calor do Nordeste servindo comunidades sertanejas com o Evangelho que transforma
+                        realidades e traz água viva.
+                    </p>
+                </div>
+            </div>
+
+            <!-- "Pivot" para o Online -->
+            <div
+                class="bg-ema-green/10 border border-ema-green/30 rounded-3xl p-8 sm:p-12 text-center max-w-4xl mx-auto gs-reveal">
+                <div
+                    class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-ema-green text-white mb-6 shadow-md">
+                    <i class="ph-bold ph-warning-circle text-3xl"></i>
+                </div>
+                <h3 class="font-heading font-bold text-2xl md:text-3xl text-onyx mb-4">Mas atenção: O campo exige raiz.
+                </h3>
+                <p class="text-lg text-gray-700 leading-relaxed font-medium">
+                    Para pisar nesses solos com autoridade e maturidade, você não irá sozinho. Antes de embarcar, você
+                    passará por um treinamento intensivo de <strong class="text-ema-green-dark">6 meses — 100% online e
+                        ao vivo</strong>. Direto da sua casa, você será discipulado por professores que vivem a missão
+                    todos os dias.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- DOBRA 4: O CHECK-IN -->
+    <section class="py-24 px-4 sm:px-6 lg:px-8 relative z-10 overflow-hidden">
+        <!-- Background Image: Avião/Viagem Escura -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=2074&auto=format&fit=crop"
+                alt="Airplane Wing" class="w-full h-full object-cover opacity-30" referrerPolicy="no-referrer" />
+            <div class="absolute inset-0 bg-onyx/90"></div>
+        </div>
+
+        <div class="max-w-4xl mx-auto text-center gs-reveal relative z-10">
+            <div
+                class="bg-white/10 backdrop-blur-xl border border-white/20 rounded-[2.5rem] p-8 sm:p-16 relative overflow-hidden shadow-[0_0_50px_rgba(39,174,96,0.15)]">
+                <!-- Luz de fundo verde -->
+                <div
+                    class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full bg-ema-green/20 blur-[100px] rounded-full pointer-events-none">
+                </div>
+
+                <div class="relative z-10">
+                    <i class="ph-fill ph-seal-check text-5xl text-ema-green mb-6 inline-block"></i>
+                    <h2 class="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">Tudo o que você
+                        precisa saber para emitir o seu passaporte.
+                    </h2>
+                    <p class="text-lg text-gray-300 mb-6 max-w-2xl mx-auto leading-relaxed">
+                        Nesta quinta-feira, vamos abrir os bastidores dos nossos campos práticos e mostrar exatamente
+                        como vai funcionar a Turma Online 2026.1.
+                    </p>
+                    <p class="text-lg text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed font-medium">
+                        Se você quer entender os requisitos, os cronogramas das viagens e como dar o primeiro passo, o
+                        seu lugar é com a gente.
+                    </p>
+
+                    <div
+                        class="bg-yellow-500/10 border border-yellow-500/30 rounded-xl p-4 mb-8 text-left max-w-2xl mx-auto flex gap-4 items-start">
+                        <i class="ph-fill ph-warning text-yellow-500 text-2xl mt-1"></i>
+                        <p class="text-sm text-yellow-100 leading-relaxed font-medium">
+                            O acesso a essa sala é restrito. <strong class="text-white">O link será enviado apenas
+                                dentro do nosso Grupo VIP</strong> e silencioso do WhatsApp.
+                        </p>
+                    </div>
+
+                    <button onclick="openModal()"
+                        class="bg-[#25D366] hover:bg-[#20BD5A] text-white font-heading font-bold text-lg sm:text-xl py-5 px-8 sm:px-12 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-[0_0_30px_rgba(37,211,102,0.4)] flex items-center justify-center gap-3 mx-auto w-full sm:w-auto border-b-4 border-black/20 active:border-b-0 active:translate-y-1">
+                        <i class="ph-fill ph-whatsapp text-3xl"></i>
+                        ENTRAR NO GRUPO VIP E GARANTIR MEU ACESSO
+                    </button>
+                    <p class="text-sm text-gray-400 mt-6 flex items-center justify-center gap-2">
+                        <i class="ph-fill ph-lock-key"></i> Suas informações estão 100% seguras.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODAL DE CAPTURA -->
+    <div id="captureModal"
+        class="fixed inset-0 z-50 flex items-center justify-center px-4 opacity-0 pointer-events-none transition-opacity duration-300 glass-modal">
+        <div class="bg-white rounded-3xl shadow-2xl w-full max-w-md overflow-hidden transform scale-95 transition-transform duration-300 relative"
+            id="modalContent">
+
+            <!-- Detalhe visual no topo do modal -->
+            <div class="h-2 w-full bg-gradient-to-r from-ema-green to-ema-green-dark"></div>
+
+            <!-- Botão Fechar -->
+            <button onclick="closeModal()"
+                class="absolute top-5 right-5 text-gray-400 hover:text-onyx transition-colors z-10 bg-gray-100 hover:bg-gray-200 rounded-full p-2">
+                <i class="ph ph-x text-xl"></i>
+            </button>
+
+            <!-- Estado 1: Formulário -->
+            <div id="formState" class="p-8 sm:p-10">
+                <div class="text-center mb-8">
+                    <div
+                        class="w-16 h-16 bg-ema-green/10 text-ema-green rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="ph-fill ph-ticket text-3xl"></i>
+                    </div>
+                    <h3 class="font-heading text-2xl font-bold text-onyx mb-2">Falta só um detalhe...</h3>
+                    <p class="text-gray-600">Para onde enviamos o seu bilhete de acesso?</p>
+                </div>
+
+                <form id="captureForm" onsubmit="handleFormSubmit(event)">
+                    <div class="space-y-5">
+                        <div>
+                            <label for="firstName" class="block text-sm font-bold text-gray-700 mb-1">Primeiro
+                                Nome</label>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                                    <i class="ph-fill ph-user text-gray-400 text-lg"></i>
+                                </div>
+                                <input type="text" id="firstName" required
+                                    class="w-full pl-11 pr-4 py-3.5 bg-gray-50 rounded-xl border border-gray-200 focus:ring-2 focus:ring-ema-green focus:border-ema-green focus:bg-white outline-none transition-all"
+                                    placeholder="Seu nome">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-bold text-gray-700 mb-1">E-mail</label>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                                    <i class="ph-fill ph-envelope-simple text-gray-400 text-lg"></i>
+                                </div>
+                                <input type="email" id="email" required
+                                    class="w-full pl-11 pr-4 py-3.5 bg-gray-50 rounded-xl border border-gray-200 focus:ring-2 focus:ring-ema-green focus:border-ema-green focus:bg-white outline-none transition-all"
+                                    placeholder="seu.melhor@email.com">
+                            </div>
+                        </div>
+                        <button type="submit" id="submitBtn"
+                            class="w-full bg-onyx hover:bg-gray-800 text-white font-heading font-bold text-lg py-4 rounded-xl transition-all mt-8 flex items-center justify-center gap-2 shadow-lg border-b-4 border-black/50 active:border-b-0 active:translate-y-1">
+                            <span>CONTINUAR</span>
+                            <i class="ph-bold ph-arrow-right"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Estado 2: Sucesso / WhatsApp -->
+            <div id="successState" class="p-8 sm:p-10 hidden text-center bg-off-white">
+                <div
+                    class="w-20 h-20 bg-yellow-100 text-yellow-600 rounded-full flex items-center justify-center mx-auto mb-6 relative">
+                    <div class="absolute inset-0 rounded-full border-4 border-yellow-400 animate-ping opacity-20"></div>
+                    <i class="ph-fill ph-warning text-4xl relative z-10"></i>
+                </div>
+                <h3 class="font-heading text-2xl font-bold text-onyx mb-4">⚠️ ATENÇÃO: VOCÊ AINDA NÃO ESTÁ NA SALA!</h3>
+                <p class="text-gray-700 mb-6 leading-relaxed">
+                    Para não perdermos a comunicação até quinta-feira (12/03), o link do Google Meet será liberado
+                    <strong class="text-onyx">APENAS no nosso Grupo VIP</strong> e silencioso.
+                </p>
+                <div
+                    class="bg-white border border-gray-200 rounded-xl p-5 mb-8 shadow-sm text-left flex gap-4 items-start">
+                    <div class="text-2xl">🎁</div>
+                    <p class="text-sm text-gray-800 leading-relaxed">
+                        <span class="font-bold block mb-1">Bônus Exclusivo:</span> Quem estiver no grupo concorrerá a um
+                        bônus de ação rápida absurdo.
+                    </p>
+                </div>
+                <a href="https://chat.whatsapp.com/" target="_blank" rel="noopener noreferrer"
+                    class="w-full bg-[#25D366] hover:bg-[#20BD5A] text-white font-heading font-bold text-lg py-4 px-6 rounded-xl transition-all flex items-center justify-center gap-3 shadow-[0_0_20px_rgba(37,211,102,0.4)] border-b-4 border-black/20 active:border-b-0 active:translate-y-1">
+                    <i class="ph-fill ph-whatsapp text-3xl"></i>
+                    <span>ENTRAR NO GRUPO VIP</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- GSAP Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script>
+        // Initialize GSAP ScrollTrigger
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Animate elements on scroll
+        document.addEventListener("DOMContentLoaded", () => {
+            const reveals = document.querySelectorAll(".gs-reveal");
+
+            reveals.forEach((elem) => {
+                gsap.fromTo(elem,
+                    { y: 60, opacity: 0 },
+                    {
+                        y: 0,
+                        opacity: 1,
+                        duration: 1.2,
+                        ease: "power3.out",
+                        scrollTrigger: {
+                            trigger: elem,
+                            start: "top 85%",
+                            toggleActions: "play none none reverse"
+                        }
+                    }
+                );
+            });
+        });
+
+        // Modal Logic
+        const modal = document.getElementById('captureModal');
+        const modalContent = document.getElementById('modalContent');
+        const formState = document.getElementById('formState');
+        const successState = document.getElementById('successState');
+        const captureForm = document.getElementById('captureForm');
+        const submitBtn = document.getElementById('submitBtn');
+
+        function openModal() {
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            modalContent.classList.remove('scale-95');
+            modalContent.classList.add('scale-100');
+            document.body.classList.add('modal-open');
+
+            // Reset states if opened again
+            formState.classList.remove('hidden');
+            successState.classList.add('hidden');
+            captureForm.reset();
+        }
+
+        function closeModal() {
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            modalContent.classList.remove('scale-100');
+            modalContent.classList.add('scale-95');
+            document.body.classList.remove('modal-open');
+        }
+
+        // Close modal on outside click
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        // Form Submit Logic
+        function handleFormSubmit(e) {
+            e.preventDefault();
+
+            const firstName = document.getElementById('firstName').value;
+            const email = document.getElementById('email').value;
+
+            // Simulate AJAX request
+            const originalBtnText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="ph ph-spinner animate-spin text-2xl"></i> <span>Processando...</span>';
+            submitBtn.disabled = true;
+
+            setTimeout(() => {
+                // Success!
+
+                // Fire GTM DataLayer Event
+                window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push({
+                    'event': 'form_lead_gerado',
+                    'lead_name': firstName,
+                    'lead_email': email
+                });
+
+                console.log("DataLayer Event Fired: form_lead_gerado");
+
+                // Redirect to Thank You Page
+                window.location.href = 'obrigado.html';
+
+                submitBtn.innerHTML = originalBtnText;
+                submitBtn.disabled = false;
+
+            }, 1200); // 1.2 second simulated delay
+        }
+    </script>
+</body>
+
+</html>

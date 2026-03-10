@@ -7,7 +7,8 @@
     "dev": "vite",
     "build:main": "vite build",
     "build:pc": "cd pc-live-quinta && npm install --no-fund --no-audit && npm run build && mkdir -p ../dist/pc-live-quinta && cp -a dist/. ../dist/pc-live-quinta/",
-    "build": "npm run build:main && npm run build:pc",
+    "build:pc2": "cd pc-live-quinta-2 && npm install --no-fund --no-audit && npm run build && mkdir -p ../dist/pc-live-quinta-2 && cp -a dist/. ../dist/pc-live-quinta-2/",
+    "build": "npm run build:main && npm run build:pc && npm run build:pc2",
     "preview": "vite preview"
   },
   "dependencies": {
